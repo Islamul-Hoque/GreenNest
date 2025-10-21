@@ -1,0 +1,14 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant ...",
+    "image": "https://i.postimg.cc/example1.png",
+    "providerName": "UrbanGreen Studio"
+  }
+]
