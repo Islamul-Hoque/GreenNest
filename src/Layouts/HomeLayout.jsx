@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 import { Outlet } from "react-router";
 import Hero from "../Pages/Hero";
 import PlantCareTips from "../Components/PlantCareTips";
+import ExpertCard from "../Components/ExpertCard";
 
 
 const HomeLayout = () => {
@@ -15,7 +16,8 @@ const HomeLayout = () => {
       </header>
       <main className='bg-green-50 mx-auto w-full flex-1 '>
         <Outlet />
-        {/* <PlantCareTips/> */}
+        <PlantCareTips/>
+        {/* <ExpertCard/> */}
       </main>
       <footer>
         <Footer />
