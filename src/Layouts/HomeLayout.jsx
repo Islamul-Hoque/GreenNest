@@ -17,7 +17,7 @@ const HomeLayout = () => {
       <main className='bg-green-50 mx-auto w-full flex-1 '>
         <Outlet />
         <PlantCareTips/>
-        {/* <ExpertCard/> */}
+        <ExpertCard/>
       </main>
       <footer>
         <Footer />
