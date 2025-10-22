@@ -110,7 +110,7 @@ const Login = () => {
                             <button type="submit" className="btn text-white bg-green-700 hover:bg-green-800 rounded-md font-semibold mt-4 " >  Login </button>
                         </fieldset>
                     </form>
-                    <p className="text-gray-500 text-center"> Dont’t Have An Account ?{" "} <Link to="/auth/register" className="text-green-700  font-medium hover:link " > Sign Up </Link>{" "} </p>
+                    <p className="text-gray-500 text-center"> Dont’t Have An Account?{" "} <Link to="/auth/register" className="text-green-700  font-medium hover:link " > Sign Up </Link>{" "} </p>
 
                     {/* Divider */}
                     <div className="flex items-center gap-3 ">

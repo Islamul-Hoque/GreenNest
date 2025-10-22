@@ -5,11 +5,20 @@ import HomeLayout from "../Layouts/HomeLayout";
 import Login from "../Pages/Login";
 import AuthLayout from "../Layouts/AuthLayout";
 import Register from "../Pages/Register";
+import Hero from "../Pages/Hero";
+import PlantCard from "../Components/PlantCard";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: HomeLayout,
+    children: [
+      {
+        index: true,
+        loader: () => fetch('/plants.json'),
+        Component: PlantCard
+      },
+    ]
   },
   {
     path: "auth",

@@ -8,7 +8,20 @@ export default function Navbar() {
   const { user, signOutUser } = useContext(AuthContext)
   const [open, setOpen] = useState(false)
 
-  const activeClass = ({ isActive }) => isActive ? "text-green-900 font-semibold border-b-2 border-green-300" : "text-gray-700 hover:text-green-800";
+  const activeClass = ({ isActive }) => 
+    // isActive ? "text-green-900 font-semibold border-b-2 border-green-300" : "text-gray-700 hover:text-green-800";
+  // isActive
+  //     ? "btn btn-sm bg-green-200 text-green-900 border-none hover:bg-green-300 font-semibold"
+  //     : "btn btn-sm bg-transparent text-gray-700 hover:bg-green-100 hover:text-green-800 border-none";
+
+  //  isActive
+  //   ? "btn btn-sm bg-gradient-to-r from-green-200 to-green-100 text-green-900 font-semibold shadow-sm hover:from-green-300 hover:to-green-200 transition-all duration-300 border-none"
+  //   : "btn btn-sm bg-transparent text-gray-700 hover:bg-green-100 hover:text-green-800 border border-transparent hover:border-green-200 transition-all duration-300";
+
+
+  isActive
+      ? "text-green-800 font-bold border-b-2 border-lime-600 pb-1 transition-colors duration-200"
+      : "text-gray-700 hover:text-green-700 font-medium transition-colors duration-200";
 
   const handleLogOut = () => {
     signOutUser()
@@ -25,7 +38,10 @@ export default function Navbar() {
   );
 
   return (
-    <nav className=" bg-gradient-to-r from-green-50 via-green-25 to-green-100 shadow-sm sticky top-0 z-40">
+    <nav 
+    className="bg-gradient-to-br from-[#ffffff] via-[#f6fff5] to-[#eaffea] shadow-md sticky top-0 z-40"
+    
+    >
       <div className=" mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
@@ -51,8 +67,8 @@ export default function Navbar() {
               </div>
             ) : (
               <div className="hidden md:flex items-center gap-3">
-                <Link to="/auth/login"    className="btn bg-[#3d7252] border-1 px-3 py-1.5 rounded-md  text-white  border-[#008435] hover:bg-green-600">Login</Link>
-                <Link to="/auth/register" className=" px-3 py-1.5 rounded-md  bg-green-700 text-white hover:bg-green-800">Register</Link>
+                <Link to="/auth/login" className="btn btn-sm bg-transparent border border-green-600 text-green-700 hover:bg-green-700 hover:text-white">Login</Link>
+                <Link to="/auth/register" className="btn btn-sm bg-green-700 text-white hover:bg-green-800">Register</Link>
               </div>
             )}
           </div>
@@ -63,8 +79,8 @@ export default function Navbar() {
             <nav className="flex flex-col gap-2"> {links} </nav>
             {!user ? (
               <div className="mt-3 flex gap-2">
-                <Link to="/auth/login" className="flex-1 text-center px-3 py-2 rounded-md border">Login</Link>
-                <Link to="/auth/register" className="flex-1 text-center px-3 py-2 rounded-md bg-green-700 text-white">Register</Link>
+                <Link to="/auth/login" className="btn flex-1 bg-transparent border border-green-700 text-green-700 hover:bg-green-700 hover:text-white">Login</Link>
+                <Link to="/auth/register" className="btn flex-1 bg-green-700 text-white hover:bg-green-800">Register</Link>
               </div>
             ) : (
               <button onClick={handleLogOut} className="w-full mt-3 text-center px-3 py-2 rounded-md border text-red-600 hover:bg-red-50">Logout</button>
@@ -77,4 +93,4 @@ export default function Navbar() {
 }
 
 
-// bg-gradient-to-r from-green-50 via-green-25 to-green-100    bg-[#cff0dc]
+
