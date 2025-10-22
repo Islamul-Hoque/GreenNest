@@ -7,6 +7,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Register from "../Pages/Register";
 import Hero from "../Pages/Hero";
 import PlantCard from "../Components/PlantCard";
+import PlantsDetails from "../Components/PlantsDetails";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         Component: PlantCard
       },
     ]
+  },
+  {
+    path: 'plant/:id',
+    Component: PlantsDetails
   },
   {
     path: "auth",

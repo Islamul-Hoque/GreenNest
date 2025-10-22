@@ -13,10 +13,10 @@ const HomeLayout = () => {
         <Navbar />
         <Hero/>
       </header>
-      {/* <main className='bg-green-50 mx-auto w-full flex-1 '>
+      <main className='bg-green-50 mx-auto w-full flex-1 '>
         <Outlet />
-        <PlantCareTips/>
-      </main> */}
+        {/* <PlantCareTips/> */}
+      </main>
       <footer>
         <Footer />
       </footer>

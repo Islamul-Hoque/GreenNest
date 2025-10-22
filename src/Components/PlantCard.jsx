@@ -7,32 +7,18 @@ const PlantCard = () => {
     const data = useLoaderData(); 
 
     return (
-        <section className="py-12 md:py-16 bg-white"> 
+        <div className="py-12 md:py-16 bg-white"> 
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-green-800">
-                    Top Rated Indoor Plants
-                </h2>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-green-800"> Top Rated Indoor Plants </h2>
 
-                {/* ✅ পরিবর্তিত: কন্ডিশনাল চেক (plantsToDisplay && plantsToDisplay.length > 0 ?) সরিয়ে দেওয়া হয়েছে */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> {/* ✅ পরিবর্তিত: গ্রিড ক্লাস শুধুমাত্র grid-cols-1 এবং md:grid-cols-3 রাখা হয়েছে */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
                     {data && data.map(plant => (
                         
-                        <div 
-                            key={plant.plantId} 
-                            className="card w-full bg-base-100 shadow-xl border border-green-200/50 
-                                       transition duration-500 hover:shadow-2xl hover:scale-[1.02] "
-                        >
-                            
-                            <figure className="relative h-64 overflow-hidden">
-                                <img 
-                                    src={plant.image} 
-                                    alt={plant.plantName} 
-                                    className="w-full h-full object-cover transition duration-500 hover:scale-105"
-                                />
+                        <div key={plant.plantId} className="card w-full bg-base-100 shadow-xl border border-green-200/50  transition duration-500 hover:shadow-2xl hover:scale-[1.02]" >
+                            <figure className="relative h-64 overflow-hidden"> <img src={plant.image} alt={plant.plantName} className="w-full h-full object-cover transition duration-500 hover:scale-105" />
                                 
                                 {/* Info Overlay at the bottom of the image */}
                                 <div className="absolute inset-x-0 bottom-0 p-4 pt-8 bg-gradient-to-t from-black/60 to-transparent text-white">
-                                    
                                     {/* Name and Price */}
                                     <div className='flex justify-between items-end'>
                                         <h2 className="text-2xl font-bold drop-shadow-lg">{plant.plantName}</h2>
@@ -41,11 +27,7 @@ const PlantCard = () => {
                                 </div>
                                 
                                 {/* Top Right Badge (Rating) */}
-                                {/* ✅ পরিবর্তিত: accentBgColor এবং accentTextColor এর সরাসরি মান বসানো হয়েছে */}
-                                <div className={`absolute top-4 right-4 badge badge-lg p-3 font-bold text-lg bg-lime-500/90 text-green-900 shadow-md`}>
-                                    <FaStar className='w-4 h-4 mr-1' /> {plant.rating}
-                                </div>
-                                
+                                <div className={`absolute top-4 right-4 badge badge-lg p-3 font-bold text-lg bg-lime-500/90 text-green-900 shadow-md`}> <FaStar className='w-4 h-4 mr-1' /> {plant.rating} </div>
                             </figure>
 
                             {/* Detailed Body Section */}
@@ -53,7 +35,7 @@ const PlantCard = () => {
                                 
                                 {/* Category and Care Level */}
                                 <div className="flex justify-between items-center text-sm">
-                                    {/* ✅ পরিবর্তিত: primaryColor এর সরাসরি মান বসানো হয়েছে */}
+
                                     <div className={`badge badge-outline border-green-500 text-green-800 font-semibold`}>
                                         <FaTags className='w-3 h-3 mr-1' /> {plant.category}
                                     </div>
@@ -72,23 +54,19 @@ const PlantCard = () => {
                                     <Link 
                                         to={`/plant/${plant.plantId}`} 
                                         className="btn btn-sm bg-green-700 text-white border-0 rounded-full shadow-md hover:bg-green-800 transition duration-300"
-                                    >
-                                        View Details
-                                    </Link>
+                                    > View Details </Link>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-                
+
                 {/* 'See All Plants' Button */}
                 <div className="text-center mt-12">
-                    <Link to="/plants" className="btn btn-lg bg-lime-500 text-green-900 border-0 shadow-lg hover:bg-lime-600 transition duration-300">
-                        See All Plants
-                    </Link>
+                    <Link to="/plants" className="btn btn-lg bg-lime-500 text-green-900 border-0 shadow-lg hover:bg-lime-600 transition duration-300"> See All Plants </Link>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 
