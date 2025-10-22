@@ -7,13 +7,14 @@ import Signup from "../Pages/Register";
 
 const HomeLayout = () => {
   return (
-    <div>
+    <div className='flex flex-col min-h-screen'>
       <header>
         <Navbar />
       </header>
-      <main>
-        {/* <Login />
-        <Signup /> */}
+      <main className='bg-green-50 mx-auto w-full flex-1 '>
+        {/* <Login /> */}
+        {/* <Signup /> */}
+        <p className="text-center">main content gola add hobe</p>
         <Outlet />
       </main>
       <footer>
