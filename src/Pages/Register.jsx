@@ -49,8 +49,8 @@ const Signup = () => {
             return setError(passwordError);
         }
         createUser( email, password)
-          .then(result => {
-              const user = result.user
+            .then(result => {
+            const user = result.user
 
             updateUser({displayName, photoURL})
                 .then(()=> {
@@ -61,18 +61,18 @@ const Signup = () => {
                     toast.error(error.message)
                     setUser(user)
                 })
-          })
-          .catch(error => {
-              if (error.code === 'auth/email-already-in-use') {
-                  setError('This email is already registered!');
-              } 
-              else if (error.code === 'auth/weak-password') {
-                  setError('Password should be at least 6 characters.');
-              } 
-              else {
-                  setError('Something went wrong. Please try again later.');
-              }
-          });
+            })
+            .catch(error => {
+                if (error.code === 'auth/email-already-in-use') {
+                    setError('This email is already registered!');
+                } 
+                else if (error.code === 'auth/weak-password') {
+                    setError('Password should be at least 6 characters.');
+                } 
+                else {
+                    setError('Something went wrong. Please try again later.');
+                }
+            });
     }
 
     const handleGoogleSignIn = () => {

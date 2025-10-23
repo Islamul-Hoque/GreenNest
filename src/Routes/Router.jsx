@@ -24,6 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'plant/:id',
+    loader: ()=> fetch('/plants.json'),
     Component: PlantsDetails
   },
   {
