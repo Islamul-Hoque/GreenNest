@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { Outlet, useLoaderData, useParams } from 'react-router';
+import React from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import PlantsDetailsCard from '../Components/PlantsDetailsCard';
+import BookForm from '../Components/BookForm';
+
 
 const PlantsDetails = () => {
-    const { id } = useParams()
-    const data = useLoaderData()
-    const [plants, setPlants] = useState({})
-    console.log(plants);
-    
-    useEffect(()=> { 
-        const plantsDetails = data.find(plant => plant.plantId == Number(id))
-        setPlants(plantsDetails)
-    }, [data, id])
+
     return (
         <div>
             <header> <Navbar/> </header>
-            {/* <h1>Details</h1> */}
-            <main> 
-                <PlantsDetailsCard plants={plants} />
+            <main className='bg-gray-100'> 
+                <section className='p-8 md:p-15 '>
+                    <section className='mb-12'>
+                        <PlantsDetailsCard/>
+                    </section>
+                    <section>
+                        <BookForm/>
+                    </section>
+                </section>
             </main>
             <footer> <Footer/> </footer>
         </div>
@@ -27,3 +26,7 @@ const PlantsDetails = () => {
 };
 
 export default PlantsDetails;
+
+
+
+//grid-cols-12 gap-8 container mx-auto

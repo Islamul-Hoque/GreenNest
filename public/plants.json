@@ -1,17 +1,17 @@
 [
   {
-    "plantId": 1,
-    "plantName": "Snake Plant",
-    "category": "Air Purifier",
-    "price": 18,
-    "rating": 5,
-    "availableStock": 10,
-    "careLevel": "Easy",
-    "size": "Medium",
-    "lightRequirement": "Low to Bright Indirect Light",
-    "description": "A hardy plant that purifies indoor air and thrives in low light. It is ideal for beginners.",
-    "image": "https://houseplantshop.com/cdn/shop/products/4_MONSTERA_DELICIOSA_1_512x512.jpg?v=1737417271",
-    "providerName": "UrbanGreen Studio"
+  "plantId": 1,
+  "plantName": "Bamboo Palm",
+  "category": "Tropical",
+  "price": 28,
+  "rating": 5,
+  "availableStock": 6,
+  "careLevel": "Moderate",
+  "size": "Large",
+  "lightRequirement": "Bright Indirect Sunlight",
+  "description": "Golden Bamboo Palm adds a refreshing tropical vibe to interiors while efficiently improving air quality. Its lush green fronds spread gracefully, creating a soft, natural look that fits both home and office decor. It prefers bright, filtered sunlight and regular watering, especially during dry seasons. With proper care, it can grow tall and vibrant, turning your space into a green oasis.",
+  "image": "https://i.ibb.co.com/YBvhjN3q/potted-indoor-plant-on-white-600nw-2144270141.jpg",
+  "providerName": "Evergreen Botanics"
   },
   {
     "plantId": 2,
@@ -23,13 +23,13 @@
     "careLevel": "Moderate",
     "size": "Medium",
     "lightRequirement": "Low to Medium Indirect Light",
-    "description": "The Peace Lily is known for its beautiful white blooms and glossy green leaves. It prefers humid conditions.",
-    "image": "https://plus.unsplash.com/premium_photo-1673969608352-ec2d84279614?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kb29yJTIwcGxhbnR8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+    "description": "The Peace Lily is a classic indoor favorite, known for its lush green leaves and elegant white blooms that symbolize purity and peace. It thrives in shaded or low-light areas and loves humidity. Apart from beautifying your home, it helps to filter harmful chemicals like ammonia and trichloroethylene from the air. Regular misting and moderate watering keep it healthy and blooming year-round.",
+    "image": "https://i.ibb.co.com/3yCCGLzJ/611-Pc-Kcpm9-L-AC-UF1000-1000-QL80.jpg",
     "providerName": "Flora Heaven"
   },
   {
     "plantId": 3,
-    "plantName": "Pothos (Money Plant)",
+    "plantName": "Golden Pothos",
     "category": "Vining Plant",
     "price": 12,
     "rating": 5,
@@ -37,8 +37,8 @@
     "careLevel": "Easy",
     "size": "Small/Vining",
     "lightRequirement": "Bright Indirect Light",
-    "description": "Pothos is easy to grow and perfect for shelves or hanging baskets. It is also believed to bring good luck.",
-    "image": "https://m.media-amazon.com/images/I/61bfaK6hWpL._AC_UF1000,1000_QL80_.jpg",
+    "description": "The Pothos, often called the Money Plant, is one of the easiest and most rewarding plants to grow indoors. Its trailing vines look beautiful on shelves, hanging baskets, or window sills. It is said to bring good luck, prosperity, and positive energy to homes. This resilient plant tolerates occasional neglect, grows fast, and can thrive in both bright and dim light environments.",
+    "image": "https://i.ibb.co.com/1G6pc0b4/Untitleddesign-2022-04-01-T150227-930.png",
     "providerName": "Green Thumb Co."
   },
   {
@@ -51,8 +51,8 @@
     "careLevel": "Easy",
     "size": "Small",
     "lightRequirement": "Bright Direct Light",
-    "description": "The Jade Plant is known for its thick, shiny leaves. It is drought-tolerant and requires minimal care.",
-    "image": "https://i0.wp.com/www.satvai.com/wp-content/uploads/2018/04/1522807717080.jpg?fit=600%2C600&ssl=1",
+    "description": "The Jade Plant is a beloved succulent that represents good fortune and friendship. With its thick, glossy leaves and tree-like shape, it makes an elegant tabletop addition. This low-maintenance plant thrives in bright light and requires minimal watering. Over time, it can grow into a beautiful mini tree, making it a long-term, rewarding companion for plant enthusiasts.",
+    "image": "https://i.ibb.co.com/93YqkRDp/capri-pink-6.webp",
     "providerName": "Succulent Oasis"
   },
   {
@@ -65,8 +65,8 @@
     "careLevel": "Easy",
     "size": "Medium",
     "lightRequirement": "Bright Indirect Light",
-    "description": "Aloe Vera is a popular medicinal plant. Its gel is highly beneficial for skin care and burns.",
-    "image": "https://5.imimg.com/data5/SELLER/Default/2024/2/390534265/MM/MP/MI/204325541/hibiscus-flower-plant.jpg",
+    "description": "Aloe Vera is not only a popular ornamental plant but also a powerful natural healer. Its thick, gel-filled leaves contain soothing and anti-inflammatory properties that help with burns, cuts, and skin care. It requires bright but indirect sunlight and minimal watering. The Aloe Vera’s refreshing green tone brings a clean, calming vibe to any room or workspace.",
+    "image": "https://i.ibb.co.com/607j1Lm2/nurserylive-plants-aloe-vera-succulent-plant-16968585871500-700x700.jpg",
     "providerName": "Health & Herbs"
   },
   {
@@ -79,8 +79,8 @@
     "careLevel": "Hard",
     "size": "Large",
     "lightRequirement": "Low to Medium Light",
-    "description": "This fern loves humidity and offers a lush, full look perfect for bathrooms or kitchens.",
-    "image": "https://m.media-amazon.com/images/I/81PiEb8zAqL._AC_SL1500_.jpg",
+    "description": "The Boston Fern is a lush, leafy plant that loves humidity and moisture. Its feathery green fronds create a soft, tropical look, making it perfect for bathrooms, kitchens, or shaded patios. This plant acts as a natural air purifier and adds a vibrant touch to any interior. It prefers frequent misting and consistent watering to maintain its dense, refreshing foliage.",
+    "image": "https://i.ibb.co.com/GfnHzsk7/Boston-Fern-Green-Moment-Indoor-Tropical-Houseplant.jpg",
     "providerName": "Jungle Vibes"
   }
 ]

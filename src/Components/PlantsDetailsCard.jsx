@@ -1,127 +1,89 @@
-// src/Components/PlantsDetailsCard.jsx
+import React from 'react';
+import { FaDollarSign, FaStar, FaBoxOpen } from 'react-icons/fa'; 
+import usePlants from '../Hooks/usePlants';
+import { useParams } from 'react-router';
+import Loading from './Loading';
 
-import React, { useState } from 'react';
-import { toast } from 'react-toastify'; 
-import { FaStar, FaTags, FaBoxOpen, FaDollarSign, FaSeedling, FaRegLightbulb, FaArrowsAltH, FaMapMarkerAlt } from 'react-icons/fa'; 
+const PlantsDetailsCard = () => {
+  const { plants, loading } = usePlants();
+  const { id } = useParams();
 
-const PlantsDetailsCard = ({ plants }) => {
-    const {  plantName, category, price, rating,  availableStock, careLevel, size, lightRequirement, description, image, providerName } = plants
-    const [error, setError] = useState('')
+  if (loading) return <Loading/>
 
-    const handleBookConsultation = (e) => {
-        e.preventDefault()
-        const name = e.target.name.value
-        const email = e.target.email.value
-
-        if (name.trim().length < 5) {
-            return setError('Name must be at least 5 characters long.');
-        } else {
-            setError('');
-        }
-
-        if (!email) {
-            return setError('Please enter your email address.');
-        }
-
-        toast.success(`Thanks, ${name}! Your consultation for the ${plantName} has been booked successfully.`);
-        e.target.reset()
-    }
-
-    return (
-        <div className='py-12 md:py-20 bg-gray-100 min-h-screen'>
-            <div className='container mx-auto px-4'>
-                <div className='grid md:grid-cols-3 gap-10 md:gap-16'>
-
-                    <div className='md:col-span-2 space-y-8'>
-                        <div className='bg-white rounded-[0.95rem] shadow-xl overflow-hidden'>
-                            <div className='px-6 md:px-8 pt-6'> <img  src={image} className='w-full object-cover object-center rounded-[0.7rem] border border-gray-100 shadow-lg ' alt={plantName} /> </div>
-
-                            <div className='p-6 md:p-8 space-y-8'>
-                                <div className='border-b pb-6 border-gray-200'>
-                                    <div className='flex justify-between items-center'>
-                                        <div>
-                                            <h2 className='text-[2.2rem] md:text-5xl font-extrabold text-green-800 mb-1'>{plantName}</h2>
-                                            <span className=' text-[0.95rem]  font-semibold text-lime-600 flex items-center'> <FaTags className='w-4 h-4 mr-2' /> {category}</span>
-                                        </div>
-
-                                        <div className='flex items-center space-x-6'>
-                                            <div className='text-right border-r pr-6 border-gray-200'>
-                                                <span className='text-[0.8rem] font-medium text-gray-500'>Price</span>
-                                                <span className='text-[2.26rem] font-extrabold text-green-700 flex items-center justify-end'> <FaDollarSign className='w-6 h-6 mr-1' /> {price} </span>
-                                            </div>
-
-                                            <div className='text-center bg-amber-50 p-3 rounded-[0.51rem] shadow-md'> 
-                                                <p className='text-[0.8rem] font-medium  text-gray-600 mb-1'>Rating</p>
-                                                <div className='flex items-center text-[1.3rem] font-bold text-gray-800'> {rating}.0 <FaStar className='w-5 h-5 text-amber-500 ml-2' /> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <h3 className='text-[1.6rem] font-bold text-green-700'>Key Plant Specifications</h3>
-                                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 pb-6 border-b border-dashed'>
-                                    <div className='p-3 border rounded-[0.52rem] bg-white shadow-sm transition duration-300 hover:shadow-md hover:border-green-300 text-center'>
-                                        <FaSeedling className='w-6 h-6 mx-auto mb-1 text-green-600' />
-                                        <p className='text-[0.75rem] font-medium text-gray-500 uppercase'>Care Level</p>
-                                        <p className='text-[0.88rem] font-bold text-gray-700 mt-1'>{careLevel}</p>
-                                    </div>
-
-                                    <div className='p-3 border rounded-[0.52rem] bg-white shadow-sm transition duration-300 hover:shadow-md hover:border-green-300 text-center'>
-                                        <FaArrowsAltH className='w-6 h-6 mx-auto mb-1 text-blue-500' />
-                                        <p className='text-[0.75rem] font-medium text-gray-500 uppercase'>Size</p>
-                                        <p className='text-[0.88rem] font-bold text-gray-700 mt-1'>{size}</p>
-                                    </div>
-
-                                    <div className='p-3 border rounded-[0.52rem] bg-white shadow-sm transition duration-300 hover:shadow-md hover:border-green-300 text-center'>
-                                        <FaRegLightbulb className='w-6 h-6 mx-auto mb-1 text-amber-600' />
-                                        <p className='text-[0.75rem] font-medium text-gray-500 uppercase'>Light Needs</p>
-                                        <p className='text-[0.88rem] font-bold text-gray-700 mt-1'>{lightRequirement}</p>
-                                    </div>
-
-                                    <div className='p-3 border rounded-[0.52rem] bg-white shadow-sm transition duration-300 hover:shadow-md hover:border-green-300 text-center'>
-                                        <FaMapMarkerAlt className='w-6 h-6 mx-auto mb-1 text-pink-500' />
-                                        <p className='text-[0.75rem] font-medium text-gray-500 uppercase'>Provider</p>
-                                        <p className='text-[0.88rem] font-bold text-gray-700 mt-1'>{providerName}</p>
-                                    </div>
-                                </div>
-
-                                <div className='space-y-4'>
-                                    <h3 className='text-[1.6rem] font-bold text-green-700'>Plant Description</h3>
-                                    <p className='italic text-gray-600 border-l-4 border-lime-500 bg-gray-50 p-4 rounded-[0.4rem] leading-relaxed shadow-sm'>{description}</p>
-                                    <div className='text-[1.2rem] font-bold text-gray-700 flex items-center pt-4 border-t border-dashed '>
-                                        <FaBoxOpen className='w-5 h-5 mr-2 text-green-700' /> Stock: <span className={`ml-1 ${availableStock > 5 ? 'text-green-600' : 'text-red-500'}`}> {availableStock} units </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+  const singlePlant = plants.find(plant => plant.plantId === Number(id));
+  const { plantName, category, price, rating, availableStock, careLevel, size, lightRequirement, description, providerName, image } = singlePlant;
 
 
-                    <div className='md:col-span-1'>
-                        <div className='w-full pb-3 rounded-[0.7rem] bg-white shadow-md border border-gray-500/10 sticky top-10'>
-                            <h3 className='text-2xl font-bold text-green-800 text-center pt-6'>Book Consultation</h3> 
-                            <div className='card-body p-6'> 
-                                <form onSubmit={ handleBookConsultation }>
-                                    <fieldset className='fieldset'>
-                                        <label className='label'>Your Name</label>
-                                        <input name='name' type='text' className='input w-full' placeholder='Enter your name' />
+  return (
+    <div className="rounded-[0.7rem] overflow-hidden shadow-md border border-gray-500/10 bg-gray-50 p-6">
+      <div className="flex flex-col md:flex-row gap-6 items-stretch">
 
-                                        <label className='label'>Email address</label>
-                                        <input  name='email'  type='email' className='input w-full' placeholder='Enter your email address'  />
+        <div className="w-full md:w-1/2  rounded-lg overflow-hidden shadow-md"> <img src={image} className="w-full h-full object-cover rounded-md" alt={plantName}  /> </div>
+            <div className="w-full  md:w-1/2 flex flex-col justify-between space-y-6">
+              <div className="border-b pb-4 -mt-1">
+                <h1 className="text-[1.9rem] font-bold text-gray-800 ">{plantName}</h1>
+                <p className="text-[0.85rem] text-gray-500 mt-1">Category: {category}</p>
 
-                                        { error && <p className='text-red-500 text-[0.8rem]'> {error} </p> }
-                                        <button type='submit' className='btn text-white bg-green-700 hover:bg-green-800 rounded-md font-semibold mt-4' >Book Now </button>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                <div className="flex justify-between items-center mt-3">
+                  <div className="text-[1.2rem] font-semibold text-gray-800 flex items-center gap-1">
+                    <span>Price:</span>  <FaDollarSign className="w-4 h-4 text-green-700" /> 
+                    <span className="font-bold text-green-700"> { price} </span>
+                  </div>
 
+                  <div className="flex items-center font-semibold text-gray-800 gap-1">
+                    <span>Rating:</span> <span className="text-amber-500 flex items-center"> {rating} <FaStar className="w-4 h-4 ml-1" /> </span>
+                  </div>
                 </div>
+              </div>
+
+              <div className="space-y-2">
+                <h2 className="text-[1.3rem] font-semibold text-gray-700">Details:</h2>
+                <ul className="space-y-2">
+                  <li className="flex justify-between border-b border-gray-200 pb-1">
+                    <span className="font-medium text-gray-600">Care Level:</span>
+                    <span className="text-gray-800"> { careLevel}</span>
+                  </li>
+
+                  <li className="flex justify-between border-b border-gray-200 pb-1">
+                    <span className="font-medium text-gray-600">Size:</span>
+                    <span className="text-gray-800"> {size }</span>
+                  </li>
+
+                  <li className="flex justify-between border-b border-gray-200 pb-1">
+                    <span className="font-medium text-gray-600">Light Needs:</span>
+                    <span className="text-gray-800">{ lightRequirement }</span>
+                  </li>
+
+                  <li className="flex justify-between border-b border-gray-200 pb-1">
+                    <span className="font-medium text-gray-600">Provider:</span>
+                    <span className="text-blue-700">{ providerName}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-[1.3rem] font-semibold text-gray-700 mb-2">Description</h2>
+                <p className="text-gray-600 italic leading-relaxed ">{description}</p>
+              </div>
+
+              <div className="pt-4 border-t border-gray-400">
+                <div className="flex justify-between items-center text-[1.2rem] font-semibold">
+                  <span className="text-gray-700">Current Stock:</span>
+                  <div>
+                    <span className={`${availableStock > 5 ? 'text-green-600' : 'text-red-500'} font-bold`}> {availableStock} </span> 
+                    <span className="ml-1 text-gray-500">units</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
-        </div>
-    );
+          </div>
+
+    </div>
+  );
 };
 
 export default PlantsDetailsCard;
+
+
+// h-[26rem] md:h-[38rem]

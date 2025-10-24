@@ -5,10 +5,11 @@ import HomeLayout from "../Layouts/HomeLayout";
 import Login from "../Pages/Login";
 import AuthLayout from "../Layouts/AuthLayout";
 import Register from "../Pages/Register";
-import Hero from "../Pages/Hero";
-import PlantCard from "../Components/PlantCard";
 import PlantsDetails from "../Pages/PlantsDetails";
-
+import Plants from "../Pages/Plants";
+import MyProfile from "../Pages/MyProfile";
+import PlantsCard from "../Components/PlantsCard";
+import PrivateRoute from "../AuthProvider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,15 +18,22 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch('/plants.json'),
-        Component: PlantCard
+        Component: PlantsCard
       },
     ]
   },
   {
+    path: 'plants',
+    Component: Plants
+  },
+  {
+    path: 'profile',
+    Component: MyProfile
+  },
+  {
     path: 'plant/:id',
-    loader: ()=> fetch('/plants.json'),
-    Component: PlantsDetails
+    // Component: PlantsDetails
+    element: <PrivateRoute> <PlantsDetails/> </PrivateRoute>
   },
   {
     path: "auth",

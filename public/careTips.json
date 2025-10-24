@@ -3,19 +3,19 @@
     "id": 1,
     "title": "Proper Watering",
     "description": "Water your plants only when the top inch of soil feels dry. Overwatering can cause root rot.",
-    "icon": "💧"
+    "image": "https://i.ibb.co.com/KcKT8XWR/watering.png"
   },
   {
     "id": 2,
     "title": "Sunlight Needs",
     "description": "Most indoor plants thrive in bright, indirect sunlight. Avoid direct harsh rays.",
-    "icon": "☀️"
+    "image": "https://i.ibb.co.com/pv9H8Nkz/nature.png"
   },
   {
     "id": 3,
     "title": "Fertilizing Routine",
     "description": "Use organic fertilizer once a month during the growing season to boost plant health.",
-    "icon": "🌿"
+    "image": "https://i.ibb.co.com/4ndQ6TmM/sprayer.png"
   }
 ]
 

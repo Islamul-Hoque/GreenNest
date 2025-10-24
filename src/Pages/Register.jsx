@@ -27,7 +27,6 @@ const Signup = () => {
             setError('');
         }
 
-        // Check email, password
         if (!email) {
             return setError('Please enter your email address.');
         } 
@@ -35,7 +34,6 @@ const Signup = () => {
             return setError('Please enter your password.');
         }
 
-        // Password  validation
         let passwordError = "";
         if (password.length < 6) {
             passwordError = "Password must be at least 6 characters long";
@@ -79,11 +77,11 @@ const Signup = () => {
         googleSignIn()
             .then(result => {
                 setUser(result.user)
-                toast.success('Google login successful')
-                navigate(location.state?.from || '/')
+                toast.success('Signed up with Google successfully!');
+                navigate(location.state || '/')
             })
             .catch(error => {
-                toast.error(error.message);
+                toast.error(error.message)
             })
     }
 
