@@ -86,25 +86,21 @@ const Signup = () => {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen pt-12 pb-16 bg-gradient-to-br from-green-50 to-white">
+        <div className="flex justify-center items-center min-h-screen pt-12 pb-16 bg-gray-100">
             <div className="w-[88%] md:w-[40%] pb-3 rounded-[0.7rem] bg-white overflow-hidden shadow">
                 <h2 className="text-3xl font-bold text-green-800 text-center pt-6"> Sign Up for <span className="text-green-600">GreenNest</span></h2>
                 <div className="card-body">
                     <form onSubmit={ handleRegister }>
                         <fieldset className="fieldset">
-                            {/* Name */}
                             <label className="label">Your Name</label>
                             <input name='name' type="text" className="input w-full" placeholder="Enter your name" />
 
-                            {/* Photo URL */}
                             <label className="label">Photo URL</label>
                             <input name='photo' type="text" className="input w-full" placeholder="Enter your photo URL" />
 
-                             {/* Email */}
                             <label className="label">Email address</label>
                             <input  name="email"  type="email" className="input w-full" placeholder="Enter your email address"  />
 
-                            {/* Password */}
                             <div className="relative">
                                 <label className="label mb-[0.38rem] mt-2">Password</label>
                                 <input name="password" type={ show ? "text" : "password" } className="input w-full" placeholder="Enter your password" />
@@ -119,7 +115,6 @@ const Signup = () => {
 
                     <p className="text-gray-500 text-center"> Already have an account?  <Link to="/auth/login" className="text-green-700  font-medium hover:link " >  Login </Link>{" "} </p>
 
-                    {/* Divider */}
                     <div className="flex items-center gap-3 ">
                         <hr className="flex-1 border-gray-200" />
                         <span className="text-gray-400 text-sm">or</span>

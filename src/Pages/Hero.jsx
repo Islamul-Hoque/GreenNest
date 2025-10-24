@@ -1,4 +1,3 @@
-// src/Pages/HeroSlider.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules"; 
@@ -21,7 +20,7 @@ import "swiper/css/effect-fade";
   {
     slogan: "Bring freshness and harmony into your home",
     subtitle: "Explore air-purifying plants that elevate your decor and create a healthier, happier living space.",
-    image: "https://www.bloomspace.co/cdn/shop/files/IMG_9409_1500x.jpg?v=1724322863",
+    image: "https://i.ibb.co.com/dJKtKjpG/IMG-9409-1500x.jpg",
   }
 ];
 
@@ -37,8 +36,8 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black/30"> </div>
 
                 <div className="relative text-center text-white px-4 md:px-10 max-w-5xl mx-auto">
-                  <h2 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-xl leading-tight"> {slide.slogan} </h2>
-                  <p className="text-lg md:text-2xl drop-shadow-lg mb-8 font-medium"> {slide.subtitle}</p>
+                  <h2 className="text-4xl  md:text-6xl w-[90%] md:w-full mx-auto font-extrabold mb-4 text-shadow-regal-blue leading-tight"> {slide.slogan} </h2>
+                  <p className="text-[1.15rem] w-[80%] mx-auto md:text-2xl drop-shadow-lg mb-8 font-medium"> {slide.subtitle}</p>
                   <button className="btn border-none shadow-none bg-green-600 text-white "> Bring Nature Home</button>
                 </div>
 

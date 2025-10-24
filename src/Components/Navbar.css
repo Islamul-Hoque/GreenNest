@@ -1,0 +1,10 @@
+a.active {
+  display: inline-block;
+  background: linear-gradient(125.07deg, #632ee3, #9f62f2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(125.07deg, #632ee3, #9f62f2);
+  border-image-slice: 1;
+}

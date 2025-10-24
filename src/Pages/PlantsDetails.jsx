@@ -11,7 +11,7 @@ const PlantsDetails = () => {
         <div>
             <header> <Navbar/> </header>
             <main className='bg-gray-100'> 
-                <section className='p-8 md:p-15 '>
+                <section className='p-8 md:p-18 '>
                     <section className='mb-12'>
                         <PlantsDetailsCard/>
                     </section>

@@ -19,9 +19,9 @@ const HomeLayout = () => {
         <section> <Hero/> </section>
       </header>
 
-      <main className='bg-gray-100 mx-auto w-full flex-1 '>
-          <div className="py-10 md:py-12 "> 
-            <div className="container mx-auto px-4">
+      <main className='bg-gray-100 mx-auto w-full flex-1 md:px-18 '>
+          <div className="py-10 md:py-12"> 
+            <div className=" mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-green-800">Top Rated Indoor Plants</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
                   {   

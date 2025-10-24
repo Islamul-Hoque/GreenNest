@@ -15,7 +15,7 @@ const ExpertCard = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {   
                         experts.map(expert => (
-                            <div key={expert.id} className="bg-green-50 rounded-xl shadow-md p-6 text-center hover:shadow-xl transition duration-300 hover:-translate-y-2">
+                            <div key={expert.id} className=" rounded-xl shadow-md p-6 text-center hover:shadow-xl transition duration-300 hover:-translate-y-2">
                                 <img src={expert.image} alt={expert.name} className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-200" />
                                 <h3 className="text-xl font-bold text-green-700">{expert.name}</h3>
                                 <p className="text-gray-600 font-medium">{expert.specialty}</p>
