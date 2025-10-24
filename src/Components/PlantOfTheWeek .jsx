@@ -1,71 +1,56 @@
 import React from 'react';
-import { FaStar, FaDollarSign, FaLeaf, FaSun, FaSeedling } from 'react-icons/fa';
+import { FaLightbulb, FaStar } from 'react-icons/fa';
 
-const PlantOfTheWeekCard = () => {
-  // Inline JSON data
-  const plant = {
-    plantId: 101,
-    plantName: "Fiddle Leaf Fig",
-    category: "Air Purifier",
-    price: 45,
-    rating: 4.8,
-    availableStock: 12,
-    careLevel: "Moderate",
-    size: "Large",
-    lightRequirement: "Bright Indirect Light",
-    description: "A popular indoor plant with large, violin-shaped leaves. Great for purifying air and adding elegance to your home.",
-    providerName: "GreenThumb Nursery",
-    specialTip: "Rotate every week to grow evenly",
-    discount: 10,
-    newArrival: true,
-    image: "https://assets.myntassets.com/w_412,q_30,dpr_3,fl_progressive,f_webp/assets/images/29422524/2024/5/8/a2f78dec-41d1-47a2-add5-4520835283dc1715184055430LivePlants1.jpg"
+const PlantOfTheWeekSection = () => {
+  const featuredPlant = {
+    plantId: 102,
+    plantName: "Anthurium",
+    category: "Flowering Plant",
+    price: 38,
+    rating: 4.9,
+    description: "Anthurium, also known as the Flamingo Flower, is loved for its vibrant red spathes and glossy green leaves. Perfect for bright indoor spaces, it brings a tropical and elegant touch to any home or office. It thrives in indirect light and high humidity, making it an ideal choice for plant enthusiasts who want a striking centerpiece.",
+    specialTip: "Wipe leaves gently with a damp cloth to keep them shiny and healthy.",
+    image: "https://i.ibb.co.com/tSv2PjQ/anthurium-indoor-flowering-plants.jpg"
   };
 
-  const formatNumber = (num) => (num >= 1000 ? (num / 1000).toFixed(1) + 'K' : num);
-
   return (
-    <div className="bg-white rounded-xl shadow-xl border border-gray-200 max-w-4xl mx-auto my-6 overflow-hidden flex flex-col md:flex-row">
-      
-      {/* Left Side: Image */}
-      <div className="md:w-1/2 h-64 md:h-auto">
-        <img src={plant.image} alt={plant.plantName} className="w-full h-full object-cover" />
-      </div>
+    <div className="bg-gray-100 pb-16 -mt-2">
+      <div className="container mx-auto px-4">
+        <h2 className="text-[2.3rem] font-extrabold text-green-800 text-center mb-10"> Plant of the Week</h2>
 
-      {/* Right Side: Body */}
-      <div className="md:w-1/2 p-6 md:p-8 space-y-4 flex flex-col justify-between">
-        <div>
-          <h2 className="text-3xl font-bold text-green-800">{plant.plantName}</h2>
-          <p className="text-sm text-gray-600 flex items-center gap-2"><FaLeaf /> {plant.category}</p>
+        <div className="flex flex-col md:flex-row bg-white rounded-[0.95rem] shadow-xl overflow-hidden">
+          <div className="md:w-2/5 h-auto"> <img src={featuredPlant.image}  className="w-full h-full object-cover" alt={featuredPlant.plantName} /> </div>
 
-          <div className="flex justify-between items-center mt-4">
-            <p className="text-lg font-bold text-green-700 flex items-center">
-              <FaDollarSign className="mr-1" /> {plant.price} {plant.discount && <span className="text-red-500 ml-2">-{plant.discount}%</span>}
-            </p>
-            <p className="flex items-center text-yellow-500">
-              {plant.rating} <FaStar className="ml-1" />
-            </p>
+          <div className="md:w-3/5 p-6 md:px-8 md:py-4 space-y-5">
+            <div className="border-b pb-4">
+                <h1 className="text-[2.3rem] font-bold text-gray-800 ">{featuredPlant.plantName}</h1>
+                <p className="text-[0.85rem] text-gray-500 mt-1">Category: {featuredPlant.category}</p>
+
+                <div className="flex justify-between items-center mt-3">
+                  <div className="font-semibold text-gray-800 flex items-center gap-1">
+                    <span>Price:</span>  <p className="  font-extrabold text-green-700">${featuredPlant.price}</p> 
+                  </div>
+
+                  <div className="flex items-center font-semibold text-gray-800 gap-1">
+                    <span>Rating:</span> <span className="text-amber-500 flex items-center"> {featuredPlant.rating} <FaStar className="w-4 h-4 ml-1" /> </span>
+                  </div>
+                </div>
+            </div>
+
+            <div>
+              <h2 className="text-[1.3rem] font-semibold text-gray-700">Description</h2>
+              <p className="text-gray-600 leading-relaxed pt-1">{featuredPlant.description}</p>
+            </div>
+
+            <div className="flex items-start gap-2 text-base italic text-green-800 bg-green-100 p-3 rounded-lg border-l-4 border-green-500">
+              <FaLightbulb className=" mt-1 text-yellow-500" /> PRO TIP: {featuredPlant.specialTip} 
+            </div>
+
           </div>
-
-          <div className="flex justify-between items-center text-sm text-gray-700 mt-2">
-            <span>Stock: {formatNumber(plant.availableStock)}</span>
-            <span>Care: {plant.careLevel}</span>
-            <span>Size: {plant.size}</span>
-          </div>
-
-          <p className="text-sm text-gray-600 flex items-center gap-2 mt-2"><FaSun /> {plant.lightRequirement}</p>
-          <p className="text-sm text-gray-500 mt-1">Provider: {plant.providerName}</p>
-          {plant.specialTip && <p className="text-sm italic text-green-700 mt-1">Tip: {plant.specialTip}</p>}
-
-          <p className="text-gray-700 text-sm mt-3">{plant.description}</p>
-          {plant.newArrival && <span className="inline-block px-3 py-1 bg-green-100 text-green-800 font-semibold rounded-full text-xs mt-2">New Arrival</span>}
         </div>
-
-        <button className="w-full mt-4 px-6 py-3 bg-green-600 text-white text-lg font-bold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
-          Book Consultation Now
-        </button>
       </div>
     </div>
   );
 };
 
-export default PlantOfTheWeekCard;
+export default PlantOfTheWeekSection;

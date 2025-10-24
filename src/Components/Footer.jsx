@@ -8,7 +8,6 @@ const Footer = () => {
             <div className="mx-auto px-6 md:px-8 pb-12 ">
                 
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
-                    {/* 1. Logo */}
                     <div className="col-span-2 md:col-span-2 space-y-4">
                         <Link to="/" className="flex items-center gap-3">
                             <FaLeaf className="w-10 h-10 text-lime-600" />
@@ -17,7 +16,6 @@ const Footer = () => {
                         <p className="text-[1.125rem] text-gray-600 leading-relaxed max-w-md border-l-4 border-lime-400 pl-4 italic font-semibold">  "Nurturing your home, naturally. We connect people with the perfect plants for a healthier, greener living space." </p>
                     </div>
 
-                    {/* 2. Shop  */}
                     <div>
                         <h4 className="text-[1.125rem] font-bold mb-6 text-green-800">SHOP</h4>
                         <ul className="space-y-3">
@@ -28,7 +26,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* 3. Support */}
                     <div>
                         <h4 className="text-[1.125rem] font-bold mb-6 text-green-800 ">SUPPORT</h4>
                         <ul className="space-y-3">
@@ -39,7 +36,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* 4. Contact */}
                     <div>
                         <h4 className="text-[1.125rem] font-bold mb-6 text-green-800 uppercase">CONNECT WITH US </h4>
                         <div className="space-y-3">
@@ -57,16 +53,8 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Copyright */}
             <div className="bg-green-800 py-4">
-                <div className=" mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center text-[0.85rem]">
-                    <p className="order-2 md:order-1 mt-3 mb-4 md:mt-0 md:mb-0 font-light text-white">  &copy; 2025 GreenNest. All rights reserved.  </p>
-                    <div className='order-1 md:order-2 space-x-6 text-white font-medium'>
-                        <Link to="/privacy" className="hover:text-green-200 transition"> Privacy Policy</Link> <span className='text-green-500'>|</span>
-                        <Link to="/terms"   className="hover:text-green-200 transition"> Terms of Service</Link> <span className='text-green-500'>|</span>
-                        <Link to="/sitemap" className="hover:text-green-200 transition"> Sitemap</Link>
-                    </div>
-                </div>
+                <p className="text-center text-white text-[0.85rem] mt-3 mb-4 md:mt-0 md:mb-0 ">  &copy; 2025 GreenNest. All rights reserved.  </p>
             </div>
         </footer>
     );
