@@ -2,14 +2,11 @@ import React, { useContext } from "react"
 import { Link, NavLink } from "react-router"
 import { AuthContext } from "../AuthProvider/AuthProvider"
 import { toast } from "react-toastify"
-
+import logo from "../assets/logo.png"
 export default function Navbar() {
     const { user, signOutUser } = useContext(AuthContext)
 
-    const activeClass = ({ isActive }) =>
-        isActive
-            ? "text-green-700 font-bold border-b-2 border-green-600 pb-1 transition-colors duration-200"
-            : "text-gray-700 hover:text-green-600 transition-colors duration-200";
+    const activeClass = ({ isActive }) => isActive ? "text-green-700 font-bold border-b-2 border-green-600 pb-1 transition-colors duration-200" : "text-gray-700 hover:text-green-600 transition-colors duration-200";
 
     const handleLogOut = () => {
         signOutUser()
@@ -31,20 +28,11 @@ export default function Navbar() {
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost md:hidden"> <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg> </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        {navLinks}
-                        {!user ? (
-                            <div>
-                                <li className="mt-1"><Link to="/auth/login">Login</Link></li>
-                                <li><Link to="/auth/register">Register</Link></li>
-                            </div>
-                            ) : (<li className="mt-2"><Link onClick={handleLogOut} className="text-red-600">Logout</Link></li> )
-                        }
-                    </ul>
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"> {navLinks} </ul>
                 </div>
 
                 <Link to="/" className="flex items-center gap-2">
-                    <div className="rounded-full"> <img className="w-[1.9rem]" src='https://cdn-icons-png.flaticon.com/128/10619/10619939.png' alt="" /> </div>
+                    <div className="rounded-full"> <img className="w-[1.9rem]" src={logo} alt="" /> </div>
                     <h1 className="text-[1.3rem] font-bold text-green-800 ">GreenNest</h1>
                 </Link>
             </div>
@@ -62,7 +50,6 @@ export default function Navbar() {
 
                         <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li><a>{user?.displayName || "User"}</a></li>
-                            <li><Link to="/profile">Profile</Link></li>
                             <li><Link onClick={handleLogOut} className="text-red-600 hover:bg-red-50">Logout</Link></li>
                         </ul>
                     </div>

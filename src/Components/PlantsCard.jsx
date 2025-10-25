@@ -33,4 +33,4 @@ const PlantsCard = ({plant}) => {
     );
 };
 
-export default PlantsCard;
+export default PlantsCard;  

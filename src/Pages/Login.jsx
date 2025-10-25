@@ -1,4 +1,4 @@
-import React, {  useContext, useRef, useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { Link, useLocation, useNavigate,  } from 'react-router';
 import { FaEye } from "react-icons/fa";
 import { FcGoogle } from 'react-icons/fc';
@@ -8,10 +8,9 @@ import { toast } from 'react-toastify';
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const { signInUser, ForgotPassword, googleSignIn, setUser } = useContext(AuthContext)
+    const { signInUser, googleSignIn, setUser } = useContext(AuthContext)
     const [show, setShow] = useState(false)
     const [error, setError] = useState('')
-    const emailRef = useRef()
 
     const location = useLocation()
     const navigate = useNavigate()
@@ -33,7 +32,7 @@ const Login = () => {
             .then(result => {
                 setError('')
                 toast.success('Logged in successfully!')
-                navigate(location.state || '/')
+                navigate(location.state?.from || '/')
             })
             .catch(error => {
                 if (error.code === 'auth/invalid-credential') {
@@ -51,35 +50,13 @@ const Login = () => {
             });
     }
 
-    const handleForgotPassword = () => {
-        const email = emailRef.current.value
-        if (!email) {
-            return setError('Please enter your email to reset password.')
-        }
-        ForgotPassword(email)
-            .then(()=> {
-                toast.success('Password reset email sent! Please check your inbox.')
-                setTimeout(() => {
-                window.open('https://mail.google.com', '_blank');
-            }, 1000);
-            })
-            .catch(error => {
-                if (error.code === 'auth/invalid-email') {
-                    setError('Please enter a valid email address.')
-                } else if (error.code === 'auth/user-not-found') {
-                    setError('No account found with this email.')
-                } else {
-                    setError('Something went wrong. Please try again later.')
-                }
-            })
-    }
-
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 setUser(result.user)
                 toast.success('Logged in with Google successfully!');
-                navigate(location?.state || '/')
+                
+                navigate(location.state?.from || '/')
             })
             .catch(error => {
                 toast.error(error.message);
@@ -94,17 +71,17 @@ const Login = () => {
                     <form onSubmit={ handleLogin }>
                         <fieldset className="fieldset">
                             <label className="label">Email address</label>
-                            <input ref={emailRef} name="email"  type="email" className="input w-full" placeholder="Enter your email address"  />
+                            <input name="email"  type="email" className="input w-full" placeholder="Enter your email address"  />
 
                             <div className="relative">
                                 <label className="label mb-[0.38rem] mt-2">Password</label>
                                 <input name="password" type={ show ? "text" : "password" } className="input w-full" placeholder="Enter your password" />
-                                <span onClick={()=> setShow(!show) } className="absolute text-[1rem] right-[1rem] top-[2.77rem] cursor-pointer z-50 " > { show ? <FaEye/> : <IoEyeOff/> }  </span>
+                                <span onClick={()=> setShow(!show) } className="absolute text-[1rem] right-4 top-[2.77rem] cursor-pointer z-50 " > { show ? <FaEye/> : <IoEyeOff/> }  </span>
                             </div>
 
                             { error && <p className='text-red-500 text-[0.8rem]'> {error} </p> }
 
-                            <div className="flex justify-end text-sm">  <button type="button" onClick={handleForgotPassword} className="text-green-700 hover:underline" > {" "} Forgot Password?{" "} </button></div>
+                            <div className="flex justify-end text-sm">  <Link to="/auth/forgot-password" className="text-green-700 hover:underline" > {" "} Forgot Password?{" "} </Link></div>
 
                             <button type="submit" className="btn text-white bg-green-700 hover:bg-green-800 rounded-md font-semibold mt-4 " >  Login </button>
                         </fieldset>

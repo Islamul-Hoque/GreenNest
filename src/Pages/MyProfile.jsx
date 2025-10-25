@@ -39,7 +39,7 @@ const MyProfile = () => {
                         <h2 className="text-[1.5rem] font-bold text-green-800 mb-6">My Profile</h2>
                         <img src={photo || "https://i.ibb.co.com/RTyj1cSs/1559144-200.png"} className="w-24 h-24  rounded-full object-cover mb-3" />
                         <h3 className="text-[1.3rem] font-semibold">{name || "Your Name"}</h3>
-                        <p className="text-gray-500 text-[0.8rem]">{user?.email}</p>
+                        <p className="text-gray-500 text-[0.8rem]">{user?.email || user?.providerData?.[0]?.email}</p>
                     </div>
 
                     <form onSubmit={handleUpdateProfile} className="space-y-4">

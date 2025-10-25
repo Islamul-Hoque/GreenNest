@@ -11,7 +11,7 @@ const PlantsDetails = () => {
         <div>
             <header> <Navbar/> </header>
             <main className='bg-gray-100'> 
-                <section className='p-8 md:p-18 '>
+                <section className='p-6 md:p-18'>
                     <section className='mb-12'>
                         <PlantsDetailsCard/>
                     </section>
@@ -26,7 +26,3 @@ const PlantsDetails = () => {
 };
 
 export default PlantsDetails;
-
-
-
-//grid-cols-12 gap-8 container mx-auto

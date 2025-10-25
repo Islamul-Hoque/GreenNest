@@ -21,31 +21,27 @@ const Signup = () => {
         const email = e.target.email.value
         const password = e.target.password.value
 
-        if (displayName.trim().length < 5) {
-            return setError('Name must be at least 5 characters long.');
-        } else {
-            setError('');
+        if (!displayName.trim()) {
+            return setError('Please enter your name.');
         }
-
         if (!email) {
             return setError('Please enter your email address.');
         } 
+
         if (!password) {
             return setError('Please enter your password.');
         }
-
-        let passwordError = "";
         if (password.length < 6) {
-            passwordError = "Password must be at least 6 characters long";
-        } else if (!/[A-Z]/.test(password)) {
-            passwordError = "Password must include at least one uppercase letter";
-        } else if (!/[a-z]/.test(password)) {
-            passwordError = "Password must include at least one lowercase letter";
+            return setError("Password must be at least 6 characters long");
         } 
-
-        if (passwordError) {
-            return setError(passwordError);
+        if (!/[A-Z]/.test(password)) {
+            return setError("Password must include at least one uppercase letter");
+        } 
+        if (!/[a-z]/.test(password)) {
+            return setError("Password must include at least one lowercase letter");
         }
+
+
         createUser( email, password)
             .then(result => {
             const user = result.user
@@ -53,6 +49,7 @@ const Signup = () => {
             updateUser({displayName, photoURL})
                 .then(()=> {
                     setUser({...user ,displayName, photoURL});
+                    toast.success("Account created successfully!")
                     navigate('/')
                 })
                 .catch(error => {

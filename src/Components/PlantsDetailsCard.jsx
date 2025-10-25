@@ -15,7 +15,7 @@ const PlantsDetailsCard = () => {
 
 
   return (
-    <div className="rounded-[0.7rem] overflow-hidden shadow-md border border-gray-500/10 bg-gray-100 p-6">
+    <div className="rounded-[0.7rem] overflow-hidden shadow-md border border-gray-500/10 bg-gray-100 p-4 md:p-6">
       <div className="flex flex-col md:flex-row gap-6 items-stretch">
 
         <div className="w-full md:w-1/2  rounded-lg overflow-hidden shadow-md"> <img src={image} className="w-full h-full object-cover rounded-md" alt={plantName}  /> </div>
@@ -84,6 +84,3 @@ const PlantsDetailsCard = () => {
 };
 
 export default PlantsDetailsCard;
-
-
-// h-[26rem] md:h-[38rem]

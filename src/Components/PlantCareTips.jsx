@@ -12,7 +12,7 @@ const PlantCareTips = () => {
   return (
     <div className="py-4 bg-gray-100 ">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-green-800 mb-10">Plant Care Tips</h2>
+        <h2 className="text-[1.85rem] md:text-[2.3rem] font-extrabold text-center text-green-800 mb-10">Plant Care Tips</h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           {  

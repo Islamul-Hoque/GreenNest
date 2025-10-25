@@ -4,27 +4,24 @@ import { toast } from 'react-toastify';
 const BookForm = () => {
     const [error, setError] = useState('');
     const handleBookConsultation = (e) => {
-            e.preventDefault()
-            const name = e.target.name.value
-            const email = e.target.email.value
+        e.preventDefault()
+        const name = e.target.name.value
+        const email = e.target.email.value
 
-            if (name.trim().length < 5) {
-                return setError('Name must be at least 5 characters long.');
-            } else {
-                setError('');
-            }
-
-            if (!email) {
-                return setError('Please enter your email address.');
-            }
-
-            toast.success(`Thank you, ${name}! We'll contact you shortly for confirmation.`);
-            e.target.reset()
+        if (!name.trim()) {
+                return setError('Please enter your name.');
         }
+        if (!email) {
+            return setError('Please enter your email address.');
+        }
+
+        toast.success(`Thank you, ${name}! We'll contact you shortly for confirmation.`);
+        e.target.reset()
+    }
     return (
         <div className='md:col-span-1'>
             <div className='md:w-[70%] mx-auto pb-3 rounded-[0.7rem] bg-white shadow-md border border-gray-500/10 '>
-                <h3 className='text-[2.5rem] font-bold text-green-800 text-center pt-6'>Book Consultation</h3> 
+                <h3 className='text-[1.9rem] md:text-[2.5rem] font-bold text-green-800 text-center pt-6'>Book Consultation</h3> 
                 <div className='card-body p-6'> 
                     <form onSubmit={ handleBookConsultation }>
                         <fieldset className='fieldset'>
