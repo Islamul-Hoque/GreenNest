@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { FaInstagram, FaFacebookF, FaPinterestP,  FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'; 
+import { FaInstagram, FaFacebookF, FaPinterestP} from 'react-icons/fa'; 
 import logo from '../assets/logo.png'
 
 const Footer = () => {
@@ -29,19 +29,14 @@ const Footer = () => {
                     <div>
                         <h4 className="text-[1.13rem] font-bold mb-2 text-green-800 ">Resources</h4>
                         <nav className="flex flex-col gap-1 text-gray-700">
+                            <Link to="/about"     className=" link-hover hover:text-green-700 transition duration-200">About</Link>
                             <Link to="/privacy" className=" link-hover hover:text-green-700 transition duration-200">Privacy Policy</Link>
-                            <Link to="/terms"   className=" link-hover hover:text-green-700 transition duration-200">Terms of Service</Link>
-                            <Link to="/faq"     className=" link-hover hover:text-green-700 transition duration-200">FAQ</Link>
+                            <Link to="/contact"   className=" link-hover hover:text-green-700 transition duration-200">Contact</Link>
                         </nav>
                     </div>
 
                     <div className='col-span-2 md:col-span-1'>
-                        <h4 className="text-[1.13rem] font-bold mb-2 text-green-800 uppercase">CONNECT WITH US </h4>
-                        <div className="space-y-3">
-                            <div className="flex items-center -ml-[0.18rem]  gap-1 text-gray-700">  <FaMapMarkerAlt className=" w-5 h-5 mt-1 shrink-0" />  <span>71 Green Lane, Dhaka</span>  </div>
-                            <div className="flex items-center gap-2 text-gray-700"> <FaEnvelope className=" w-5 h-5" /> <span>greennest@gmail.com</span> </div>
-                        </div>
-
+                        <h4 className="text-[1.13rem] font-bold mb-2 text-green-800">Follow Our Journey</h4>
                         <div className="flex space-x-4 pt-4 items-center justify-start">
                             <Link to="https://www.instagram.com" target="_blank"  className="transition duration-300 transform hover:scale-110"> <FaInstagram  className="w-8 h-8 text-pink-600 hover:text-pink-400" /> </Link>
                             <Link to="https://www.facebook.com"  target="_blank"  className="transition duration-300 transform hover:scale-110"> <FaFacebookF  className="w-7 h-7 text-blue-600 hover:text-blue-400" /></Link>
