@@ -11,7 +11,7 @@ const PrivateRoute = ({children}) => {
     if(loading){
         return <Loading/>
     }
-    if(user && user.email || user?.providerData?.[0]?.providerId ){
+    if(user && ( user.email || user?.providerData?.[0]?.providerId ) ){
         return children
     } 
     return <Navigate to='/auth/login' state={{ from: location?.pathname }} />

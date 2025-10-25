@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const ForgotPassword = () => {
-    const { ForgotPassword } = useContext(AuthContext)
+    const { forgotPassword } = useContext(AuthContext)
     const [error, setError] = useState('')
     const emailRef = useRef()
 
@@ -14,7 +14,7 @@ const ForgotPassword = () => {
         if (!email) {
             return setError('Please enter your email to reset password.')
         }
-        ForgotPassword(email)
+        forgotPassword(email)
             .then(()=> {
                 toast.success("We've sent you a password reset email. Check your inbox!");
                 setTimeout(() => {

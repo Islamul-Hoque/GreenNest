@@ -23,4 +23,3 @@ const usePlants = () => {
 };
 
 export default usePlants;
-

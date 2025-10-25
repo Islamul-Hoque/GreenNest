@@ -18,7 +18,7 @@ const PlantsDetailsCard = () => {
     <div className="rounded-[0.7rem] overflow-hidden shadow-md border border-gray-500/10 bg-gray-100 p-4 md:p-6">
       <div className="flex flex-col md:flex-row gap-6 items-stretch">
 
-        <div className="w-full md:w-1/2  rounded-lg overflow-hidden shadow-md"> <img src={image} className="w-full h-full object-cover rounded-md" alt={plantName}  /> </div>
+        <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-md"> <img src={image} className="w-full h-full object-cover transition duration-500 hover:scale-105 rounded-md" alt={plantName}  /> </div>
             <div className="w-full  md:w-1/2 flex flex-col justify-between space-y-6">
               <div className="border-b pb-4 -mt-1">
                 <h1 className="text-[1.9rem] font-bold text-gray-800 ">{plantName}</h1>

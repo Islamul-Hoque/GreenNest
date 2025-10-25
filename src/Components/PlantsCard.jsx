@@ -7,7 +7,7 @@ const PlantsCard = ({plant}) => {
 
     return (
         <div key={plantId} className="w-full bg-white border border-gray-200 rounded-[0.8rem] shadow-lg overflow-hidden transition duration-500 hover:scale-102">
-            <div className="w-full h-[26rem] md:h-[20rem] overflow-hidden"> <img src={image} alt={plantName} className="w-full h-full object-cover" /></div>
+            <div className="w-full h-[26.1rem] md:h-[20.1rem] overflow-hidden"> <img src={image} alt={plantName} className="w-full h-full object-cover" /></div>
 
             <div className="p-5 space-y-3">
                 <div className='flex justify-between items-center border-b pb-2'>
@@ -33,4 +33,4 @@ const PlantsCard = ({plant}) => {
     );
 };
 
-export default PlantsCard;  
+export default PlantsCard;

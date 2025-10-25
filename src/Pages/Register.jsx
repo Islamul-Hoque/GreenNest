@@ -6,7 +6,6 @@ import { IoEyeOff } from 'react-icons/io5';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 
-
 const Signup = () => {
     const { createUser, googleSignIn, setUser, updateUser } = useContext(AuthContext)
     const [show, setShow] =useState(false)
@@ -40,7 +39,6 @@ const Signup = () => {
         if (!/[a-z]/.test(password)) {
             return setError("Password must include at least one lowercase letter");
         }
-
 
         createUser( email, password)
             .then(result => {
@@ -104,8 +102,8 @@ const Signup = () => {
                                 <span onClick={()=> setShow(!show) } className="absolute text-[1rem] right-4 top-[2.77rem] cursor-pointer z-50 " > { show ? <FaEye/> : <IoEyeOff/> }  </span>
                             </div>
 
-
                             { error && <p className='text-red-500 text-[0.8rem]'> {error} </p> }
+
                             <button type="submit" className="btn text-white bg-green-700 hover:bg-green-800 rounded-md font-semibold mt-4 " >  Sign Up </button>
                         </fieldset>
                     </form>
