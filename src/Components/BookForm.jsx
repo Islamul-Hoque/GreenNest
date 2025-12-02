@@ -20,7 +20,7 @@ const BookForm = () => {
     }
     return (
         <div className='md:col-span-1'>
-            <div className='md:w-[70%] mx-auto pb-3 rounded-[0.7rem] bg-white shadow-md border border-gray-500/10 '>
+            <div className='w-full  mx-auto pb-3 rounded-[0.7rem] bg-white shadow-md border border-gray-500/10 '>
                 <h3 className='text-[1.9rem] md:text-[2.5rem] font-bold text-green-800 text-center pt-6'>Book Consultation</h3> 
                 <div className='card-body p-6'> 
                     <form onSubmit={ handleBookConsultation }>
