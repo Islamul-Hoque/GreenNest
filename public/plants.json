@@ -1,18 +1,73 @@
 [
   {
   "plantId": 1,
+  "slug": "bamboo-palm",
   "plantName": "Bamboo Palm",
+  "scientificName": "Chamaedorea seifrizii",
+  "family": "Arecaceae",
   "category": "Tropical",
-  "price": 28,
-  "rating": 5,
-  "availableStock": 6,
+  "plantType": "Indoor",
+  "origin": "Central and South America",
+  "plantingSeason": "Year-Round",
+
+  "description": "Golden Bamboo Palm adds a refreshing tropical vibe to interiors while efficiently improving air quality. Its lush green fronds spread gracefully, creating a soft, natural look that fits both home and office decor.",
+  "benefits": ["air-purifying", "stress-relief", "eco-friendly"],
+  "specialNote": "Safe for pets",
+
   "careLevel": "Moderate",
-  "size": "Large",
   "lightRequirement": "Bright Indirect Sunlight",
-  "description": "Golden Bamboo Palm adds a refreshing tropical vibe to interiors while efficiently improving air quality. Its lush green fronds spread gracefully, creating a soft, natural look that fits both home and office decor. It prefers bright, filtered sunlight and regular watering, especially during dry seasons. With proper care, it can grow tall and vibrant, turning your space into a green oasis.",
-  "image": "https://i.ibb.co.com/YBvhjN3q/potted-indoor-plant-on-white-600nw-2144270141.jpg",
-  "providerName": "Evergreen Botanics"
-  },
+  "waterFrequency": "2-3 times/week",
+  "humidityPreference": "Medium",
+  "soilType": "Well-draining potting mix",
+  "fertilizer": "Organic liquid fertilizer, monthly",
+  "repottingFrequency": "Every 18–24 months",
+  "pruningTips": "Remove yellow or dead fronds regularly",
+  "temperatureRange": "18–28°C",
+
+  "size": "Large",
+  "growthRate": "Moderate",
+  "height": "Up to 6 feet",
+  "spread": "2–3 feet",
+
+  "price": 28,
+  "currency": "USD",
+  "discount": 10,
+  "availableStock": 6,
+  "providerName": "Evergreen Botanics",
+  "deliveryOptions": ["Free Shipping", "Express Delivery"],
+  "dateAdded": "2025-11-20",
+  "sku": "BP-001",
+  "isFeatured": true,
+
+  "rating": 4.8,
+  "reviewsCount": 124,
+  "reviews": [
+    {
+      "user": "Alice",
+      "comment": "Beautiful plant, really freshens up my living room!",
+      "rating": 5,
+      "date": "2025-11-25"
+    },
+    {
+      "user": "Rahim",
+      "comment": "Needed a bit more sunlight than expected, but still thriving.",
+      "rating": 4,
+      "date": "2025-11-28"
+    }
+  ],
+
+  "image": "https://i.ibb.co/YBvhjN3q/potted-indoor-plant-on-white-600nw-2144270141.jpg",
+  "gallery": [
+    "https://i.ibb.co/YBvhjN3q/potted-indoor-plant-on-white-600nw-2144270141.jpg",
+    "https://i.ibb.co/xyz123/bamboo-palm-closeup.jpg",
+    "https://i.ibb.co/abc456/bamboo-palm-office.jpg"
+  ],
+  "videoUrl": "https://www.youtube.com/watch?v=bamboo-palm-care",
+
+  "tags": ["air-purifying", "pet-safe", "low-maintenance"],
+  "indoorOutdoor": "Indoor",
+  "relatedPlants": [2, 3, 5]
+},
   {
     "plantId": 2,
     "plantName": "Peace Lily",

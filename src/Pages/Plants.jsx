@@ -1,32 +1,117 @@
-import React from 'react';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import React, { useState } from 'react';
 import PlantsCard from '../Components/PlantsCard';
 import usePlants from '../Hooks/usePlants';
 import Loading from '../Components/Loading';
 
 const Plants = () => {
-    const { plants, loading } = usePlants();
-    if (loading) return <Loading/>
-    return (
-        <div>
-            {/* <header> <Navbar/> </header> */}
-            <main className='bg-gray-100 pb-4'> 
-                <div className="py-10 md:py-12"> 
-                    <div className="md:px-18 mx-auto px-4">
-                        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-green-800"> Our Plant Collection </h2>
+  const { plants, loading } = usePlants();
+  const [search, setSearch] = useState("");
+  const [sortBy, setSortBy] = useState("default"); 
+  const [filterCategories, setFilterCategories] = useState([]);
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> 
-                            {   
-                                plants.map(plant => ( <PlantsCard key={plant.plantId} plant={plant} />))
-                            }
-                        </div>
-                    </div>
-                </div>
-            </main>
-            {/* <footer> <Footer/> </footer> */}
+  const handleCategoryChange = (category) => {
+    if (category === "All") {
+      setFilterCategories([]); 
+    } else {
+      setFilterCategories((prev) =>
+        prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category]
+      );
+    }
+  };
+
+  const handleSortChange = (value) => {
+    setSortBy(value);
+  };
+
+  const filteredPlants = plants
+    .filter((plant) => plant.plantName.toLowerCase().includes(search.toLowerCase()) || plant.category?.toLowerCase().includes(search.toLowerCase()))
+    .filter((plant) => (filterCategories.length > 0 ? filterCategories.includes(plant.category) : true))
+    .sort((a, b) => {
+      if (sortBy === "priceLow") return a.price - b.price;
+      if (sortBy === "priceHigh") return b.price - a.price;
+      if (sortBy === "ratingLow") return a.rating - b.rating;
+      if (sortBy === "ratingHigh") return b.rating - a.rating;
+      return 0; 
+    });
+
+  if (loading) return <Loading />;
+
+  return (
+    <main className="bg-gray-100 py-10 md:py-12">
+      <div className="md:px-18 mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-2 text-green-800">Our Plant Collection</h2>
+        <p className="text-center text-gray-600 mb-10">Search and discover your favorite plants — filter by category, sort by price or rating.</p>
+
+        <div className="mb-6 flex items-center justify-center">
+          <label className="input w-full md:w-[20rem] gap-2 border rounded-md px-3 py-2 bg-white flex items-center">
+            <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"> <circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /> </g> </svg>
+            <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search plant" className="outline-none bg-transparent w-full" />
+          </label>
         </div>
-    );
+
+        <section className="grid grid-cols-12 gap-6">
+          <aside className="col-span-3 rounded-md space-y-6 sticky top-20 h-fit">
+            <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-md shadow-sm">
+              <input type="checkbox" defaultChecked/>
+              <div className="collapse-title font-semibold text-gray-700">Filter by Category</div>
+              <div className="collapse-content space-y-2">
+                <label className="flex items-center gap-2">
+                  <input type="checkbox" checked={filterCategories.length === 0} onChange={() => handleCategoryChange("All")} />
+                  <span>All Categories</span>
+                </label>
+                {["Flowering Plant", "Vining Plant", "Succulent", "Medicinal Plant", "Humidity Lover"].map((cat) => (
+                  <label key={cat} className="flex items-center gap-2">
+                    <input type="checkbox" checked={filterCategories.includes(cat)} onChange={() => handleCategoryChange(cat)} />
+                    <span>{cat}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-md shadow-sm">
+              <input type="checkbox" defaultChecked/>
+              <div className="collapse-title font-semibold text-gray-700">Sort by Price</div>
+              <div className="collapse-content space-y-2">
+                <label className="flex items-center gap-2">
+                  <input type="checkbox" checked={sortBy === "default"} onChange={() => handleSortChange("default")} />
+                  <span>Default (Original Order)</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input type="checkbox" checked={sortBy === "priceLow"} onChange={() => handleSortChange("priceLow")} />
+                  <span>Low to High</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input type="checkbox" checked={sortBy === "priceHigh"} onChange={() => handleSortChange("priceHigh")} />
+                  <span>High to Low</span>
+                </label>
+              </div>
+            </div>
+
+            <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-md shadow-sm">
+              <input type="checkbox" defaultChecked/>
+              <div className="collapse-title font-semibold text-gray-700">Sort by Rating</div>
+              <div className="collapse-content space-y-2">
+                <label className="flex items-center gap-2">
+                  <input type="checkbox" checked={sortBy === "ratingLow"} onChange={() => handleSortChange("ratingLow")} />
+                  <span>Low to High</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input type="checkbox" checked={sortBy === "ratingHigh"} onChange={() => handleSortChange("ratingHigh")} />
+                  <span>High to Low</span>
+                </label>
+              </div>
+            </div>
+          </aside>
+
+          <div className="col-span-9">
+            <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {filteredPlants.map((plant) => <PlantsCard key={plant.plantId} plant={plant} />)}
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
 };
 
 export default Plants;
