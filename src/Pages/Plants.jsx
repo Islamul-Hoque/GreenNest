@@ -59,7 +59,7 @@ const Plants = () => {
                   <input type="checkbox" checked={filterCategories.length === 0} onChange={() => handleCategoryChange("All")} />
                   <span>All Categories</span>
                 </label>
-                {["Flowering Plant", "Vining Plant", "Succulent", "Medicinal Plant", "Humidity Lover"].map((cat) => (
+                {["Tropical", "Flowering Plant", "Vining Plant", "Succulent", "Medicinal Plant", "Humidity Lover"].map((cat) => (
                   <label key={cat} className="flex items-center gap-2">
                     <input type="checkbox" checked={filterCategories.includes(cat)} onChange={() => handleCategoryChange(cat)} />
                     <span>{cat}</span>
