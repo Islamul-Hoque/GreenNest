@@ -9,7 +9,7 @@ const PlantsDetails = () => {
 
     return (
         <div>
-            <header> <Navbar/> </header>
+            {/* <header> <Navbar/> </header> */}
             <main className='bg-gray-100'> 
                 <section className='p-6 md:p-18'>
                     <section className='mb-12'>
@@ -20,7 +20,7 @@ const PlantsDetails = () => {
                     </section>
                 </section>
             </main>
-            <footer> <Footer/> </footer>
+            {/* <footer> <Footer/> </footer> */}
         </div>
     );
 };

@@ -18,12 +18,16 @@ export default function Navbar() {
         <>
             <li><NavLink end to="/" className={activeClass}>Home</NavLink></li>
             <li><NavLink end to="/plants" className={activeClass}>Plants</NavLink></li>
-            <li><NavLink end to="/profile" className={activeClass}>My Profile</NavLink></li>
+            <li><NavLink end to="/about" className={activeClass}>About Us</NavLink></li>
+            {
+                user && (<li><NavLink end to="/profile" className={activeClass}>My Profile</NavLink></li>)
+            }
+            
         </>
     );
 
     return (
-        <div className="navbar bg-[#eaffeaba] px-6 md:px-8 shadow-md sticky top-0 z-40">
+        <div className="navbar bg-[#eaffeaba] px-6 md:px-14 shadow-md sticky top-0 z-40">
 
             <div className="navbar-start">
                 <div className="dropdown">

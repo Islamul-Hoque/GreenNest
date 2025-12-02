@@ -16,5 +16,11 @@
     "title": "Fertilizing Routine",
     "description": "Use organic fertilizer once a month during the growing season to boost plant health.",
     "image": "https://i.ibb.co.com/4ndQ6TmM/sprayer.png"
-  }
+  },
+  {
+  "id": 4,
+  "title": "Humidity Control",
+  "description": "Many indoor plants love humidity. Mist leaves occasionally or use a humidifier to keep them healthy.",
+  "image": "https://i.ibb.co.com/q32zXmg7/3239341.png"
+}
 ]

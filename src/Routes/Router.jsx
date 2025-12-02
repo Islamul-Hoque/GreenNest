@@ -11,30 +11,35 @@ import MyProfile from "../Pages/MyProfile";
 import PlantsCard from "../Components/PlantsCard";
 import PrivateRoute from "../AuthProvider/PrivateRoute";
 import ForgotPassword from "../Pages/ForgotPassword";
+import About from "../Pages/About";
+import RootLayout from "../Layouts/RootLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: HomeLayout,
+    Component: RootLayout,
     children: [
       {
         index: true,
-        Component: PlantsCard
+        Component: HomeLayout
       },
-    ]
-  },
-  {
-    path: 'plants',
-    Component: Plants
-  },
-  {
-    path: 'profile',
-    Component: MyProfile
-  },
-  {
-    path: 'plant/:id',
-    element: <PrivateRoute> <PlantsDetails/> </PrivateRoute>
-  },
+      {
+        path: 'plants',
+        Component: Plants
+      },
+      {
+        path: 'plant/:id',
+        element:  <PlantsDetails/> 
+      },
+      {
+        path: '/about',
+        Component: About
+      },
+      {
+        path: 'profile',
+        Component: MyProfile
+      },
+]},
   {
     path: "auth",
     Component: AuthLayout,

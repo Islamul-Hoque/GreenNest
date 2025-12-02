@@ -10,7 +10,7 @@ const Plants = () => {
     if (loading) return <Loading/>
     return (
         <div>
-            <header> <Navbar/> </header>
+            {/* <header> <Navbar/> </header> */}
             <main className='bg-gray-100 pb-4'> 
                 <div className="py-10 md:py-12"> 
                     <div className="md:px-18 mx-auto px-4">
@@ -24,7 +24,7 @@ const Plants = () => {
                     </div>
                 </div>
             </main>
-            <footer> <Footer/> </footer>
+            {/* <footer> <Footer/> </footer> */}
         </div>
     );
 };
