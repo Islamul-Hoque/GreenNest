@@ -21,7 +21,7 @@ const HomeLayout = () => {
               <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-green-800">Top Rated Indoor Plants</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4"> 
                   {   
-                    plants.map(plant => ( <PlantsCard key={plant.plantId} plant={plant} />))
+                    plants.slice(0, 4).map(plant => ( <PlantsCard key={plant.plantId} plant={plant} />))
                   }
               </div>
             </div>
