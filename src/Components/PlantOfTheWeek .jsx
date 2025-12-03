@@ -8,13 +8,14 @@ const PlantOfTheWeekSection = () => {
     price: 38,
     rating: 4.9,
     description: "Anthurium, also known as the Flamingo Flower, is loved for its vibrant red spathes and glossy green leaves. Perfect for bright indoor spaces, it brings a tropical and elegant touch to any home or office. It thrives in indirect light and high humidity, making it an ideal choice for plant enthusiasts who want a striking centerpiece.",
+    description2: "It thrives best in bright, indirect light and enjoys high humidity, making it especially suitable for bathrooms, kitchens, or homes with humid climates. Regular misting and consistent watering help maintain its lush, glossy leaves and long‑lasting blooms. With proper care, Anthurium can flower multiple times a year, rewarding plant lovers with its exotic beauty season after season.",
     specialTip: "Wipe leaves gently with a damp cloth to keep them shiny and healthy.",
     image: "https://i.ibb.co.com/tSv2PjQ/anthurium-indoor-flowering-plants.jpg"
   };
 
   return (
     <div className="pb-16 -mt-2">
-      <div className="mx-auto px-4">
+      <div className="">
         <h2 className="text-[2.3rem] font-extrabold text-green-800 text-center mb-10"> Plant of the Week</h2>
 
         <div className="flex flex-col md:flex-row bg-white rounded-[0.95rem] shadow-xl overflow-hidden">
@@ -39,6 +40,7 @@ const PlantOfTheWeekSection = () => {
             <div>
               <h2 className="text-[1.3rem] font-semibold text-gray-700">Description</h2>
               <p className="text-gray-600 leading-relaxed pt-1">{featuredPlant.description}</p>
+              <p className="text-gray-600 leading-relaxed pt-2">{featuredPlant.description2}</p>
             </div>
 
             <div className="flex items-start gap-2 text-base italic text-green-800 bg-green-100 p-3 rounded-lg border-l-4 border-green-500">

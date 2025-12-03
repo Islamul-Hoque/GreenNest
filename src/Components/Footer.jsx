@@ -6,7 +6,7 @@ import logo from '../assets/logo.png'
 const Footer = () => {
     return (
         <footer className="bg-green-100 text-gray-800 border-t border-gray-100">
-            <div className="mx-auto px-6 md:px-8 py-12">
+            <div className="mx-auto px-6 md:px-14 py-12">
 
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
                     <div className="col-span-2 space-y-2 -mt-2">
@@ -22,7 +22,7 @@ const Footer = () => {
                         <nav className="flex flex-col gap-1 text-gray-700">
                             <Link to="/"        className="link-hover hover:text-green-700 transition duration-200">Home</Link>
                             <Link to="/plants"  className="link-hover hover:text-green-700 transition duration-200">All Plants</Link>
-                            <Link to="/profile" className="link-hover hover:text-green-700 transition duration-200">Profile</Link>
+                            <Link to="/faq" className=" link-hover hover:text-green-700 transition duration-200">FAQ</Link>
                         </nav>
                     </div>
 
@@ -30,8 +30,8 @@ const Footer = () => {
                         <h4 className="text-[1.13rem] font-bold mb-2 text-green-800 ">Resources</h4>
                         <nav className="flex flex-col gap-1 text-gray-700">
                             <Link to="/about"     className=" link-hover hover:text-green-700 transition duration-200">About</Link>
-                            <Link to="/privacy" className=" link-hover hover:text-green-700 transition duration-200">Privacy Policy</Link>
                             <Link to="/contact"   className=" link-hover hover:text-green-700 transition duration-200">Contact</Link>
+                            <Link to="/Register" className=" link-hover hover:text-green-700 transition duration-200">Register</Link>
                         </nav>
                     </div>
 

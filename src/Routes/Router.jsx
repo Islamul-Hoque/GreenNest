@@ -15,6 +15,7 @@ import About from "../Pages/About";
 import RootLayout from "../Layouts/RootLayout";
 import Contact from "../Pages/Contact";
 import FAQ from "../Components/Faq";
+import ErrorPage from "../Components/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -49,11 +50,6 @@ const router = createBrowserRouter([
         path: 'profile',
         Component: MyProfile
       },
-]},
-  {
-    path: "auth",
-    Component: AuthLayout,
-    children: [
       {
         path: "login",
         Component: Login,
@@ -65,9 +61,11 @@ const router = createBrowserRouter([
       {
         path: "register",
         Component: Register,
-      },
-    ],
-  },
-]);
-
+      }
+]},
+{
+  path: '*',
+  Component: ErrorPage
+}
+])
 export default router;

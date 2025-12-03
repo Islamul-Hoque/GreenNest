@@ -26,7 +26,6 @@ const aboutData = [
 const About = () => {
   return (
     <div className="w-full bg-gray-50 ">
-      {/* Hero Section */}
       <section className="bg-green-50 py-16 px-6 md:px-14">
         <div className=" mx-auto text-center">
           <motion.h1  initial={{ opacity: 0, y: -40 }}  animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}  className="text-4xl md:text-5xl font-extrabold text-green-800 leading-tight" >  About GreenNest
@@ -35,8 +34,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission, Vision, Story Cards */}
-      <section className="py-10 bg-green-50 mx-auto px-6 md:px-14">
+      <section className="py-10 bg-green-50 px-6 md:px-14">
         <div className="grid md:grid-cols-3 gap-10">
           {aboutData.map((item, index) => (
             <motion.div key={item.id} initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 60 }} transition={{ duration: 0.6, delay: index * 0.2 }}  viewport={{ once: false, amount: 0.3 }} 
@@ -48,7 +46,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-14 bg-green-50 text-center px-6 md:px-14">
         <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="text-3xl font-bold text-green-800">  Ready to Start Your Green Journey? </motion.h2>
         <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className=" mt-2" > Browse our collection and discover plants that bring life to your space. </motion.p>

@@ -16,7 +16,7 @@ const Contact = () => {
         <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className="mt-3 text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">We’d love to hear from you! Reach out for plant care tips, orders, or collaborations.</motion.p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+      <div className=" mx-auto grid md:grid-cols-2 gap-10">
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="space-y-6">
           <h3 className="text-2xl font-bold text-green-700">Get in Touch</h3>
           <p className="text-gray-700">Have questions or need help? Reach out to us anytime.</p>

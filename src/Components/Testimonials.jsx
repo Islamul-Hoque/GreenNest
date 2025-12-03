@@ -53,18 +53,13 @@ const testimonials = [
   },
 ];
 
-
 const Testimonials = () => {
   return (
-    <section className="pb-20 px-6 md:px-16  text-gray-800">
-      <div className="container mx-auto max-w-6xl text-center mb-12">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-3">
-  Hear From <span className="text-gradient">Plant Lovers</span>
-</h2>
-<p className="text-gray-600 text-lg max-w-2xl mx-auto">
-  Honest feedback from our happy customers who brought greenery into their homes.
-</p>
-  </div>
+    <section className="pb-20 text-gray-800">
+      <div className="mx-auto text-center mb-12">
+        <h2 className="text-4xl font-extrabold text-green-800 mb-3"> Hear From Plant Lovers</h2>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto"> Honest feedback from our happy customers who brought greenery into their homes.</p>
+      </div>
 
       <Swiper loop={true} effect={"coverflow"} grabCursor={true} centeredSlides={true} slidesPerView={3}
         coverflowEffect={{
@@ -78,7 +73,7 @@ const Testimonials = () => {
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination, Autoplay]}
-        className="mySwiper"
+        className="mySwiper "
         breakpoints={{
           320: { slidesPerView: 1, coverflowEffect: { depth: 50, modifier: 1.5 } },
           640: { slidesPerView: 1, coverflowEffect: { depth: 70, modifier: 1.8 } },
@@ -89,18 +84,15 @@ const Testimonials = () => {
         {testimonials.map((t) => (
           <SwiperSlide key={t.id} >
             <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl flex flex-col h-full gap-4 border border-purple-100 transform transition-all duration-300 hover:scale-[1.02] overflow-hidden">
-              <div className=" text-purple-200 opacity-80 "> <FaQuoteLeft size={28} /> </div>
-
+              <div className=" text-green-200 opacity-80 "> <FaQuoteLeft size={28} /> </div>
               <div><p className="text-gray-700 leading-relaxed text-lg grow">{t.review}</p></div>
-
               <div> 
                 <div className="border-t border-gray-200 my-2"></div>
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-purple-200 p-1 overflow-hidden shrink-0">  <img className="rounded-full object-cover w-full h-full" src={t.photo} alt={t.name} /> </div>
+                  <div className="w-14 h-14 rounded-full bg-green-200 p-[0.19rem] overflow-hidden shrink-0">  <img className="rounded-full object-cover w-full h-full" src={t.photo} alt={t.name} /> </div>
                   <div className="text-left">
                     <h3 className="text-xl font-bold text-gray-900">{t.name}</h3>
                     <p className="text-gray-500 text-sm">{t.position}</p>
-                    {/* <p className="text-gray-400 text-sm">{t.date}</p> */}
                   </div>
                 </div>
               </div>
@@ -112,6 +104,5 @@ const Testimonials = () => {
     </section>
   );
 }
-
 
 export default Testimonials;

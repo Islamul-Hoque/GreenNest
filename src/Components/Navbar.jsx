@@ -59,8 +59,8 @@ export default function Navbar() {
                     </div>
                 ) : (
                     <div className="flex items-center gap-3">
-                        <Link to="/auth/login" className="btn btn-sm bg-transparent border border-green-600 text-green-700 hover:bg-green-700 hover:text-white">Login</Link>
-                        <Link to="/auth/register" className="btn btn-sm bg-green-700 text-white hover:bg-green-800">Register</Link>
+                        <Link to="/login" className="btn btn-sm bg-transparent border border-green-600 text-green-700 hover:bg-green-700 hover:text-white">Login</Link>
+                        <Link to="/register" className="btn btn-sm bg-green-700 text-white hover:bg-green-800">Register</Link>
                     </div>
                 )}
             </div>

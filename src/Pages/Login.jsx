@@ -64,7 +64,7 @@ const Login = () => {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen  bg-gray-100">
+        <div className="flex justify-center items-center min-h-screen bg-green-50">
             <div className="w-[88%] md:w-[40%] pb-3 rounded-[0.7rem] bg-white overflow-hidden shadow">
                 <h2 className="text-3xl font-bold text-green-800 text-center pt-6"> Login to <span className="text-green-600">GreenNest</span></h2>
                 <div className="card-body">
@@ -81,12 +81,12 @@ const Login = () => {
 
                             { error && <p className='text-red-500 text-[0.8rem]'> {error} </p> }
 
-                            <div className="flex justify-end text-sm">  <Link to="/auth/forgot-password" className="text-green-700 hover:underline" > {" "} Forgot Password?{" "} </Link></div>
+                            <div className="flex justify-end text-sm">  <Link to="/forgot-password" className="text-green-700 hover:underline" > {" "} Forgot Password?{" "} </Link></div>
 
                             <button type="submit" className="btn text-white bg-green-700 hover:bg-green-800 rounded-md font-semibold mt-4 " >  Login </button>
                         </fieldset>
                     </form>
-                    <p className="text-gray-500 text-center"> Don’t have an account?{" "} <Link to="/auth/register" className="text-green-700  font-medium hover:link " > Sign Up </Link>{" "} </p>
+                    <p className="text-gray-500 text-center"> Don’t have an account?{" "} <Link to="/register" className="text-green-700  font-medium hover:link " > Sign Up </Link>{" "} </p>
 
                     <div className="flex items-center gap-3 ">
                         <hr className="flex-1 border-gray-200" />
