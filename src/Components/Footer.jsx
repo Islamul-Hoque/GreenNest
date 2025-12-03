@@ -5,10 +5,10 @@ import logo from '../assets/logo.png'
 
 const Footer = () => {
     return (
-        <footer className="bg-green-100 text-gray-800 border-t border-gray-100">
-            <div className="mx-auto px-6 md:px-14 py-12">
+        <footer className="bg-green-100 text-gray-800  ">
+            <div className="mx-auto px-6 md:px-14 py-12 ">
 
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-10 justify-between ">
                     <div className="col-span-2 space-y-2 -mt-2">
                         <Link to="/" className="flex items-center gap-3">
                             <div className="rounded-full"> <img className="w-[3rem]" src={logo} alt="" /> </div>
@@ -35,7 +35,7 @@ const Footer = () => {
                         </nav>
                     </div>
 
-                    <div className='col-span-2 md:col-span-1'>
+                    <div className='col-span-2 md:col-span-1 '>
                         <h4 className="text-[1.13rem] font-bold mb-2 text-green-800">Follow Our Journey</h4>
                         <div className="flex space-x-4 pt-4 items-center justify-start">
                             <Link to="https://www.instagram.com" target="_blank"  className="transition duration-300 transform hover:scale-110"> <FaInstagram  className="w-8 h-8 text-pink-600 hover:text-pink-400" /> </Link>
@@ -55,3 +55,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// border-t border-gray-100
