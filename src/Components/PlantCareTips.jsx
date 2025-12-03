@@ -21,12 +21,12 @@ const PlantCareTips = () => {
   };
 
   return (
-    <div className=" py-16">
-      <div className="mx-auto text-center mb-12">
+    <div className=" py -16">
+      <div className="mx-auto text-center my-14">
         <motion.h2  initial={{ opacity: 0, y: -20 }}  whileInView={{ opacity: 1, y: 0 }}  transition={{ duration: 0.8 }}  className="text-[1.85rem] md:text-[2.3rem] font-extrabold text-green-800" >  Plant Care Tips  </motion.h2>
       </div>
 
-      <motion.div  className="grid md:grid-cols-4 gap-6" variants={containerVariants} initial="hidden"  whileInView="visible"  viewport={{ once: false, amount: 0.3 }} >
+      <motion.div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" variants={containerVariants} initial="hidden"  whileInView="visible"  viewport={{ once: false, amount: 0.3 }} >
         {tips.map((tip) => (
           <motion.div  key={tip.id} variants={cardVariants} whileHover={{ scale: 1.05, y: -5, transition: { type: "spring", stiffness: 120, damping: 12 } }} className="bg-white rounded-xl shadow-md p-6 text-center border border-gray-100 cursor-pointer" >
             <div className="mb-4">

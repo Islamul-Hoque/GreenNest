@@ -9,8 +9,7 @@ const PlantsDetails = () => {
 
     return (
         <div>
-            {/* <header> <Navbar/> </header> */}
-            <main className='bg-gray-100'> 
+            <main className='bg-green-50'> 
                 <section className='p-6 md:p-12'>
                     <section className='mb-12'>
                         <PlantsDetailsCard/>
@@ -20,7 +19,6 @@ const PlantsDetails = () => {
                     </section>
                 </section>
             </main>
-            {/* <footer> <Footer/> </footer> */}
         </div>
     );
 };

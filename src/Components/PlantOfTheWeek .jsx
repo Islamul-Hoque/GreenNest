@@ -14,9 +14,9 @@ const PlantOfTheWeekSection = () => {
   };
 
   return (
-    <div className="pb-16 -mt-2">
+    <div className="pb- 16 -mt-2">
       <div className="">
-        <h2 className="text-[2.3rem] font-extrabold text-green-800 text-center mb-10"> Plant of the Week</h2>
+        <h2 className="text-[2.3rem] font-extrabold text-green-800 text-center my-14"> Plant of the Week</h2>
 
         <div className="flex flex-col md:flex-row bg-white rounded-[0.95rem] shadow-xl overflow-hidden">
           <div className="md:w-2/5 h-auto overflow-hidden"> <img src={featuredPlant.image}  className="w-full h-full object-cover transition duration-500 hover:scale-105" alt={featuredPlant.plantName} /> </div>

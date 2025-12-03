@@ -20,7 +20,7 @@ const PlantsDetailsCard = () => {
   const isLowStock = availableStock <= 5;
 
   return (
-    <main className="max-w-7xl mx-auto">
+    <main className="">
       <section className="bg-white rounded-xl shadow-xl overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-10 items-stretch ">
           <div className="flex h-[29rem] ">  <img src={image} alt={plantName} className="w-full h-full object-cover rounded-xl border border-gray-200" /> </div>

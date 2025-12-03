@@ -55,8 +55,8 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="pb-20 text-gray-800">
-      <div className="mx-auto text-center mb-12">
+    <section className="mb-16 text-gray-800">
+      <div className="mx-auto text-center my-14">
         <h2 className="text-4xl font-extrabold text-green-800 mb-3"> Hear From Plant Lovers</h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto"> Honest feedback from our happy customers who brought greenery into their homes.</p>
       </div>
