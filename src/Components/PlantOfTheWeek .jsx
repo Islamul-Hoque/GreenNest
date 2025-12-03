@@ -13,7 +13,7 @@ const PlantOfTheWeekSection = () => {
   };
 
   return (
-    <div className="bg-gray-100 pb-16 -mt-2">
+    <div className="pb-16 -mt-2">
       <div className="mx-auto px-4">
         <h2 className="text-[2.3rem] font-extrabold text-green-800 text-center mb-10"> Plant of the Week</h2>
 

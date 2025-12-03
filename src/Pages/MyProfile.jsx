@@ -28,12 +28,8 @@ const MyProfile = () => {
     }
 
     return (
-        <div className="min-h-screen flex flex-col">
-            <header> 
-                <Navbar /> 
-            </header>
-
-            <main className="bg-gray-100 py-12">
+        <div className="min-h-screen bg-gray-100 flex flex-col -mb-10">
+            <main className="mt-16 pb-25">
                 <div className=" w-[88%] md:w-[40%] mx-auto bg-white p-6 rounded-[0.6rem] shadow">
                     <div className="flex flex-col items-center mb-6">
                         <h2 className="text-[1.5rem] font-bold text-green-800 mb-6">My Profile</h2>
@@ -57,10 +53,6 @@ const MyProfile = () => {
                     </form>
                 </div>
             </main>
-
-            <footer>
-                <Footer />
-            </footer>
         </div>
     );
 };

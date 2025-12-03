@@ -5,14 +5,14 @@ import logo from '../assets/logo.png'
 
 const Footer = () => {
     return (
-        <footer className="bg-green-50 text-gray-800 border-t border-gray-100">
+        <footer className="bg-green-100 text-gray-800 border-t border-gray-100">
             <div className="mx-auto px-6 md:px-8 py-12">
 
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
                     <div className="col-span-2 space-y-2 -mt-2">
                         <Link to="/" className="flex items-center gap-3">
-                            <div className="rounded-full"> <img className="w-[1.95rem]" src={logo} alt="" /> </div>
-                            <span className="text-[2.25rem] font-extrabold text-green-900 tracking-wider">GreenNest</span>
+                            <div className="rounded-full"> <img className="w-[3rem]" src={logo} alt="" /> </div>
+                            <h1 className="text-[2.3rem] -ml-2 font-bold text-green-800 ">GreenNest</h1>
                         </Link>
                         <p className="text-[1.13rem] text-gray-600 border-lime-400 font-semibold"> Nurturing your home, naturally. We connect people with the perfect plants for a healthier, greener living space. </p>
                     </div>

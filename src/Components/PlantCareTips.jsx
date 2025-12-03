@@ -21,7 +21,7 @@ const PlantCareTips = () => {
   };
 
   return (
-    <div className="bg-gray-100 py-16">
+    <div className=" py-16">
       <div className="mx-auto max-w-6xl text-center mb-12">
         <motion.h2  initial={{ opacity: 0, y: -20 }}  whileInView={{ opacity: 1, y: 0 }}  transition={{ duration: 0.8 }}  className="text-[1.85rem] md:text-[2.3rem] font-extrabold text-green-800" >  Plant Care Tips  </motion.h2>
       </div>

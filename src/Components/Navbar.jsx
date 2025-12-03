@@ -27,7 +27,7 @@ export default function Navbar() {
     );
 
     return (
-        <div className="navbar bg-[#eaffeaba] px-6 md:px-14 shadow-md sticky top-0 z-40">
+        <div className="navbar bg-green-100 px-6 md:px-14 shadow-md sticky top-0 z-40">
 
             <div className="navbar-start">
                 <div className="dropdown">
@@ -36,8 +36,8 @@ export default function Navbar() {
                 </div>
 
                 <Link to="/" className="flex items-center gap-2">
-                    <div className="rounded-full"> <img className="w-[1.9rem]" src={logo} alt="" /> </div>
-                    <h1 className="text-[1.3rem] font-bold text-green-800 ">GreenNest</h1>
+                    <div className="rounded-full"> <img className="w-[2.2rem]" src={logo} alt="" /> </div>
+                    <h1 className="text-[1.3rem] -ml-2 font-bold text-green-800 ">GreenNest</h1>
                 </Link>
             </div>
 

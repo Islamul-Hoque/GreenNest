@@ -21,7 +21,7 @@ const ExpertCard = () => {
     };
 
     return (
-        <div className="pt-12 pb-16 bg-gray-100">
+        <div className="pt-12 pb-16">
             <div className="mx-auto px-4">
                 <motion.h2 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}  transition={{ duration: 0.8 }}  viewport={{ once: true }} className="text-3xl md:text-4xl font-extrabold text-center text-green-800 mb-10" > Meet Our Green Experts </motion.h2>
 

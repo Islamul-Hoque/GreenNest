@@ -37,20 +37,20 @@ const Plants = () => {
   if (loading) return <Loading />;
 
   return (
-    <main className="bg-gray-100 py-10 md:py-12">
+    <main className="bg-gray-100 ">
       <div className="md:px-18 mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-2 text-green-800">Our Plant Collection</h2>
         <p className="text-center text-gray-600 mb-10">Search and discover your favorite plants — filter by category, sort by price or rating.</p>
 
         <div className="mb-6 flex items-center justify-center">
-          <label className="input w-full md:w-[20rem] gap-2 border rounded-md px-3 py-2 bg-white flex items-center">
+          <label className="input w-full sm:w-[20rem] md:w-[25rem] gap-2 border rounded-md px-3 py-2 bg-white flex items-center">
             <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"> <circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /> </g> </svg>
             <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search plant" className="outline-none bg-transparent w-full" />
           </label>
         </div>
 
-        <section className="grid grid-cols-12 gap-6">
-          <aside className="col-span-3 rounded-md space-y-6 sticky top-20 h-fit">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 ">
+          <aside className="sm:col-span-1 md:col-span-4 lg:col-span-3 rounded-md space-y-6 sm:sticky sm:top-20 h-fit bg-gray-100">
             <div className="collapse collapse-arrow bg-base-100 border border-base-300 rounded-md shadow-sm">
               <input type="checkbox" defaultChecked/>
               <div className="collapse-title font-semibold text-gray-700">Filter by Category</div>
@@ -73,16 +73,13 @@ const Plants = () => {
               <div className="collapse-title font-semibold text-gray-700">Sort by Price</div>
               <div className="collapse-content space-y-2">
                 <label className="flex items-center gap-2">
-                  <input type="checkbox" checked={sortBy === "default"} onChange={() => handleSortChange("default")} />
-                  <span>Default (Original Order)</span>
+                  <input type="checkbox" checked={sortBy === "default"} onChange={() => handleSortChange("default")} /><span>Default (Original Order)</span>
                 </label>
                 <label className="flex items-center gap-2">
-                  <input type="checkbox" checked={sortBy === "priceLow"} onChange={() => handleSortChange("priceLow")} />
-                  <span>Low to High</span>
+                  <input type="checkbox" checked={sortBy === "priceLow"} onChange={() => handleSortChange("priceLow")} /> <span>Low to High</span>
                 </label>
                 <label className="flex items-center gap-2">
-                  <input type="checkbox" checked={sortBy === "priceHigh"} onChange={() => handleSortChange("priceHigh")} />
-                  <span>High to Low</span>
+                  <input type="checkbox" checked={sortBy === "priceHigh"} onChange={() => handleSortChange("priceHigh")} /> <span>High to Low</span>
                 </label>
               </div>
             </div>
@@ -92,19 +89,17 @@ const Plants = () => {
               <div className="collapse-title font-semibold text-gray-700">Sort by Rating</div>
               <div className="collapse-content space-y-2">
                 <label className="flex items-center gap-2">
-                  <input type="checkbox" checked={sortBy === "ratingLow"} onChange={() => handleSortChange("ratingLow")} />
-                  <span>Low to High</span>
+                  <input type="checkbox" checked={sortBy === "ratingLow"} onChange={() => handleSortChange("ratingLow")} /> <span>Low to High</span>
                 </label>
                 <label className="flex items-center gap-2">
-                  <input type="checkbox" checked={sortBy === "ratingHigh"} onChange={() => handleSortChange("ratingHigh")} />
-                  <span>High to Low</span>
+                  <input type="checkbox" checked={sortBy === "ratingHigh"} onChange={() => handleSortChange("ratingHigh")} />  <span>High to Low</span>
                 </label>
               </div>
             </div>
           </aside>
 
-          <div className="col-span-9">
-            <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="sm:col-span-1 md:col-span-8 lg:col-span-9">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredPlants.map((plant) => <PlantsCard key={plant.plantId} plant={plant} />)}
             </div>
           </div>
