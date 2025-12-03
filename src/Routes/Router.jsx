@@ -13,6 +13,8 @@ import PrivateRoute from "../AuthProvider/PrivateRoute";
 import ForgotPassword from "../Pages/ForgotPassword";
 import About from "../Pages/About";
 import RootLayout from "../Layouts/RootLayout";
+import Contact from "../Pages/Contact";
+import FAQ from "../Components/Faq";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: '/about',
         Component: About
+      },
+      {
+        path: '/faq',
+        Component: FAQ
+      },
+      {
+        path: '/contact',
+        Component: Contact
       },
       {
         path: 'profile',

@@ -5,7 +5,6 @@ import { toast } from "react-toastify"
 import logo from "../assets/logo.png"
 export default function Navbar() {
     const { user, signOutUser } = useContext(AuthContext)
-
     const activeClass = ({ isActive }) => isActive ? "text-green-700 font-bold border-b-2 border-green-600 pb-1 transition-colors duration-200" : "text-gray-700 hover:text-green-600 transition-colors duration-200";
 
     const handleLogOut = () => {
@@ -19,10 +18,11 @@ export default function Navbar() {
             <li><NavLink end to="/" className={activeClass}>Home</NavLink></li>
             <li><NavLink end to="/plants" className={activeClass}>Plants</NavLink></li>
             <li><NavLink end to="/about" className={activeClass}>About Us</NavLink></li>
+            <li><NavLink end to="/faq" className={activeClass}>FAQ</NavLink></li>
+            <li><NavLink end to="/contact" className={activeClass}>Contact</NavLink></li>
             {
                 user && (<li><NavLink end to="/profile" className={activeClass}>My Profile</NavLink></li>)
             }
-            
         </>
     );
 
