@@ -14,7 +14,6 @@ const PlantsDetailsCard = () => {
   if (!singlePlant) return <p className="text-center py-10 text-xl font-semibold text-red-600">Plant not found</p>;
 
   const { plantName, scientificName, family, category, plantType, origin, plantingSeason, description, careLevel, lightRequirement, waterFrequency, humidityPreference, soilType, fertilizer, repottingFrequency, pruningTips, temperatureRange, size, growthRate, height,  spread, price, discount, availableStock, providerName, deliveryOptions, dateAdded, sku, rating, image, tags } = singlePlant;
-
   const hasDiscount = discount && discount > 0;
   const finalPrice = hasDiscount ? (price - (price * discount) / 100).toFixed(2) : price.toFixed(2);
   const isLowStock = availableStock <= 5;
@@ -41,7 +40,7 @@ const PlantsDetailsCard = () => {
                 <p><strong>Pruning:</strong> {pruningTips}</p>
               </div>
 
-              <div className=" flex items-center flex-wrap gap-2 mt-4">
+              <div className="flex items-center flex-wrap gap-2 mt-4">
                 <strong className="shrink-0 ">Tags:</strong>
                 <div className="flex flex-wrap gap-2">
                   {tags?.map((t, i) => (
@@ -54,10 +53,10 @@ const PlantsDetailsCard = () => {
             <div className="border-t border-gray-100 pt-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-green-700 flex items-center"><FaDollarSign className="text-lg mr-0.5" />{finalPrice}   </span>
+                  <span className="text-2xl font-bold text-green-700 flex items-center"><FaDollarSign className="text-lg mr-0.5"/>{finalPrice}   </span>
                   {hasDiscount && (
                     <>
-                      <span className="text-sm text-gray-400 line-through flex items-center"> <FaDollarSign className="text-xs mr-0.5" />{price.toFixed(2)} </span>
+                      <span className="text-sm text-gray-400 line-through flex items-center"> <FaDollarSign className="text-xs mr-0.5"/>{price.toFixed(2)} </span>
                       <span className="text-xs font-semibold text-red-700 bg-red-100 px-2 py-0.5 rounded-full">-{discount}%</span>
                     </>
                   )}
@@ -92,7 +91,6 @@ const PlantsDetailsCard = () => {
           <p className="text-gray-700 leading-relaxed text-base italic">{description}</p>
         </div>
 
-        {/* Plant specifications */}
         <div className="p-6 md:p-10 border-t border-gray-100">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">Plant specifications</h3>
           <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
@@ -109,24 +107,22 @@ const PlantsDetailsCard = () => {
           </table>
         </div>
 
-        {/* Quick care  */}
         <div className="p-6 md:p-10 border-t border-gray-100 bg-gray-50">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">Quick care</h3>
           <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
             <tbody className="divide-y divide-gray-100">
-              <tr> <td className="p-2 font-medium text-gray-700">Light</td> <td className="p-2 text-gray-600">{lightRequirement}</td> </tr>
-              <tr> <td className="p-2 font-medium text-gray-700">Water</td>  <td className="p-2 text-gray-600">{waterFrequency}</td>   </tr>
-              <tr> <td className="p-2 font-medium text-gray-700">Humidity</td>   <td className="p-2 text-gray-600">{humidityPreference}</td> </tr>
-              <tr> <td className="p-2 font-medium text-gray-700">Temperature</td><td className="p-2 text-gray-600">{temperatureRange}</td> </tr>
-              <tr> <td className="p-2 font-medium text-gray-700">Soil</td> <td className="p-2 text-gray-600">{soilType}</td> </tr>
-              <tr> <td className="p-2 font-medium text-gray-700">Repotting</td> <td className="p-2 text-gray-600">{repottingFrequency}</td> </tr>
-              <tr> <td className="p-2 font-medium text-gray-700">Pruning</td>  <td className="p-2 text-gray-600">{pruningTips}</td> </tr>
-              <tr> <td className="p-2 font-medium text-gray-700">Care Level</td>  <td className="p-2 text-gray-600">{careLevel}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Light</td><td className="p-2 text-gray-600">{lightRequirement}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Water</td><td className="p-2 text-gray-600">{waterFrequency}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Humidity</td><td className="p-2 text-gray-600">{humidityPreference}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Temperature</td><td className="p-2 text-gray-600">{temperatureRange}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Soil</td><td className="p-2 text-gray-600">{soilType}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Repotting</td><td className="p-2 text-gray-600">{repottingFrequency}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Pruning</td><td className="p-2 text-gray-600">{pruningTips}</td></tr>
+              <tr><td className="p-2 font-medium text-gray-700">Care Level</td><td className="p-2 text-gray-600">{careLevel}</td></tr>
             </tbody>
           </table>
         </div>
 
-        {/* Provider & delivery */}
         <div className="p-6 md:p-10 border-t border-gray-100 bg-gray-50">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">Provider & Delivery</h3>
           <div className="flex justify-between gap-4 text-sm">
