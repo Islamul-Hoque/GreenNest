@@ -47,7 +47,7 @@ const Faq = () => {
                 <motion.div key={faq.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.2 }} viewport={{ once: true }}>
                     <div className="collapse collapse-arrow bg-base-100 border border-base-300">
                         <input type="radio" name="faq-accordion" defaultChecked={index === 0} />
-                        <div className="collapse-title font-semibold text-green-700">{faq.question}</div>
+                        <div className="collapse-title font-semibold text-[1.2rem]">{faq.question}</div>
                         <div className="collapse-content text-gray-600 text-lg leading-relaxed">{faq.answer}</div>
                     </div>
                 </motion.div>
