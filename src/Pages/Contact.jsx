@@ -25,14 +25,14 @@ const Contact = () => {
           <div className="flex items-center gap-3 text-gray-700"><FaMapMarkerAlt className="text-green-700" /><span>Dhaka, Bangladesh</span></div>
           <div className="flex items-center gap-3 text-gray-700"><FaClock className="text-green-700" /><span>Available: Sat–Thu, 9am–6pm</span></div>
           <div className="flex items-center gap-3 "><FaComments className="text-green-700" /><span>We usually reply within 24 hours</span></div>
-          <div className="flex items-center gap-3 text-gray-700"><FaLeaf className="text-green-700" /><span>Need plant care tips? Visit our <a href="/faq" className="text-green-700 hover:underline">FAQ page</a>.</span></div>
+          <div className="flex items-center gap-3 text-gray-700"><FaLeaf className="text-green-700" /><span>Need plant care tips? Visit our <a href="/faq" className="text-green-700 hover:underline">FAQ page</a></span></div>
           <div className="flex items-center gap-3 text-gray-700"><FaShieldAlt className="text-green-700" /><span>100% Healthy Plant Guarantee</span></div>
         </motion.div>
 
         <motion.form onSubmit={handleSubmit} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: true }} className="bg-white shadow-md rounded-lg p-8 space-y-4">
-          <div><label className="block text-sm font-medium text-gray-700">Name</label><input defaultValue={user?.displayName} type="text" required className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" /></div>
-          <div><label className="block text-sm font-medium text-gray-700">Email</label><input defaultValue={user?.email || user?.providerData?.[0]?.email} type="email" required className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" /></div>
-          <div><label className="block text-sm font-medium text-gray-700">Message</label><textarea rows="4" required className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"></textarea></div>
+          <div><label className="block text-sm font-medium text-gray-700">Name</label><input defaultValue={user?.displayName} type="text" required placeholder="Enter your name" className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" /></div>
+          <div><label className="block text-sm font-medium text-gray-700">Email</label><input defaultValue={user?.email || user?.providerData?.[0]?.email} type="email" placeholder="Enter your email" required className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" /></div>
+          <div><label className="block text-sm font-medium text-gray-700">Message</label><textarea rows="4" required placeholder="Write your message here..." className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"></textarea></div>
           <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} type="submit" className="w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-800 transition">Send Message</motion.button>
         </motion.form>
       </div>

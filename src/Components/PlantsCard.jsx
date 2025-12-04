@@ -24,7 +24,7 @@ const PlantsCard = ({ plant }) => {
 
     return (
         <motion.div  whileHover={{ scale: 1.05, y: -5, transition: { type: "spring", stiffness: 120, damping: 12 } }}  className="w-full bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 cursor-pointer"   >
-            <div className="w-full h-[22.1rem] md:h-[15.1rem] overflow-hidden"> <img src={image} alt={plantName} className="w-full h-full object-cover"/>  </div>
+            <div className="w-full h-[20.1rem] md:h-[15.1rem] overflow-hidden"> <img src={image} alt={plantName} className="w-full h-full object-cover"/>  </div>
 
             <div className="p-4 space-y-3 flex flex-col justify-between grow">
                 <div className='flex justify-start pb-2'>
@@ -33,7 +33,7 @@ const PlantsCard = ({ plant }) => {
 
                 
                 <div className='flex justify-between items-start'>
-                    <h2 className="text-xl font-semibold text-gray-900 leading-tight flex-1 min-h-[2.5rem] ">{plantName}</h2>
+                    <h2 className="text-xl font-semibold text-gray-900 leading-tight flex-1 min-h-[2.8rem] ">{plantName}</h2>
                     <p className="text-xl font-bold text-green-700 ml-4">${price}</p>
                 </div>
 

@@ -3,7 +3,7 @@
 A sleek single-page MERN application for plant lovers to explore, buy, and care for indoor plants — optimized for a smooth user experience, modern UI, and responsive design.
 
 ## 🚀 Live Demo
-🔗 Live Site: https://green-nest-01.netlify.app     
+🔗 Live Site: https://green-nest-83896.web.app     
 🔗 Client Repo: https://github.com/Islamul-Hoque/GreenNest-Client  
 
 ---

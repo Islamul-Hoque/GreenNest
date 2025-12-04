@@ -28,7 +28,7 @@ const MyProfile = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col -mb-10">
+        <div className="min-h-screen bg-green-50 flex flex-col -mb-10">
             <main className="mt-16 pb-25">
                 <div className=" w-[88%] md:w-[40%] mx-auto bg-white p-6 rounded-[0.6rem] shadow">
                     <div className="flex flex-col items-center mb-6">

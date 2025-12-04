@@ -44,7 +44,7 @@ const PlantsDetailsCard = () => {
                 <strong className="shrink-0 ">Tags:</strong>
                 <div className="flex flex-wrap gap-2">
                   {tags?.map((t, i) => (
-                    <span key={i} className="px-3 py-0.5 bg-gray-200 text-gray-700 rounded-full text-xs font-medium">{t}</span>
+                    <span key={i} className="px-3 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">{t}</span>
                   ))}
                 </div>
               </div>
@@ -80,7 +80,7 @@ const PlantsDetailsCard = () => {
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold ${isLowStock ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
                   {isLowStock ? 'Low stock' : 'In stock'} • {availableStock} units
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700">SKU: {sku}</span>
+                {/* <span className="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700">SKU: {sku}</span> */}
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ const PlantsDetailsCard = () => {
 
         <div className="p-6 md:p-10 border-t border-gray-100 bg-gray-50">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">Provider & Delivery</h3>
-          <div className="flex justify-between gap-4 text-sm">
+          <div className="flex flex-col md:flex-row md:justify-between gap-4 text-sm">
             <p><strong>Provider:</strong> <span className="text-blue-700 font-medium">{providerName}</span></p>
             <p className="md:col-span-2"><strong>Delivery:</strong> <span className="text-gray-700">{deliveryOptions?.join(', ')}</span></p>
             <p><strong>Added:</strong> <span className="text-gray-700">{dateAdded}</span></p>
