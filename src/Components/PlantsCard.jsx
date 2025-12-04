@@ -33,7 +33,7 @@ const PlantsCard = ({ plant }) => {
 
                 
                 <div className='flex justify-between items-start'>
-                    <h2 className="text-xl font-semibold text-gray-900 leading-tight flex-1 min-h-[2.8rem] ">{plantName}</h2>
+                    <h2 className="text-xl font-semibold text-gray-900 leading-tight flex-1 sm:min-h-[2.8rem] ">{plantName}</h2>
                     <p className="text-xl font-bold text-green-700 ml-4">${price}</p>
                 </div>
 

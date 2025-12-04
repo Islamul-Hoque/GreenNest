@@ -87,7 +87,7 @@ const PlantsDetailsCard = () => {
         </div>
 
         <div className="p-6 md:p-10 border-t border-gray-100">
-          <h2 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2"> <FaInfoCircle /> Description </h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-3 mt-8 sm:mt-0 flex items-center gap-2"> <FaInfoCircle /> Description </h2>
           <p className="text-gray-700 leading-relaxed text-base italic">{description}</p>
         </div>
 
