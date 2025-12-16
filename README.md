@@ -20,17 +20,14 @@ The platform uses JSON-based plant data, Firebase Authentication, and a minimali
 ---
 
 ## ✨ Key Features
-- Explore top-rated indoor plants with images, prices, ratings, and “View Details”.  
-- Plant care tips section with watering, sunlight, and fertilizing guides.  
-- Book expert consultations via a protected form.  
-- Firebase Authentication: Email/Password + Google Sign-In.  
-- Authenticated users can access profile page and update displayName/photoURL.  
-- Dark/Light mode toggle (optional).  
-- Fully responsive UI across devices.  
-- Smooth slider animations with Swiper.js or Framer Motion.  
+- Plant exploration with price and rating-based sorting, category filters, and integrated search bar
+- Authenticated users can access profile page and update displayName/photoURL. 
+- Firebase Authentication with Email/Password & Google Sign‑In
+- Book expert consultations 
+- Smooth slider animations with Framer Motion.  
 - Toast notifications for success/error messages.  
-- SPA functionality with no reload or crash errors.  
-- Update profile (displayName/photoURL) in real-time. 
+- Plant care tips section with watering, sunlight, and fertilizing guides.  
+- Fully responsive UI across devices. 
 
 ---
 
@@ -114,4 +111,3 @@ npm run dev
 🔗 **Social Links:**  
 - [LinkedIn](https://linkedin.com/Islamul-Hoque)  
 - [Facebook](https://facebook.com/ISLAMUL.HOQUE.ISHFAK.OFFICIAL)  
-- [Twitter](https://twitter.com/ISHFAK2003)
